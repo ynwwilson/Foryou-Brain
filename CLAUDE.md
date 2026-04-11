@@ -136,3 +136,16 @@ Quando o Manus estiver ativo:
 - Português brasileiro
 - Tom: direto, prático, sem enrolação
 - Nunca tratar Mestre como iniciante — ele entende negócio
+
+---
+
+## Memória compartilhada
+
+A memória da ForYou Code está na pasta `memory/` dentro deste vault.
+
+**Regras:**
+- No início de cada sessão, leia o `memory/MEMORY.md` para carregar o índice
+- Leia os arquivos referenciados que forem relevantes para a tarefa
+- Ao aprender algo novo sobre o usuário, preferências, feedback ou contexto de projeto — salve em `memory/` seguindo o formato padrão (frontmatter com name, description, type + conteúdo)
+- Atualize o `memory/MEMORY.md` com o novo ponteiro
+- Esta pasta sincroniza via GitHub para todos os membros da equipe (Mestre, Eduardo, Marco)
