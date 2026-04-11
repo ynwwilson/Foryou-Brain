@@ -1,6 +1,6 @@
 ---
 tipo: top-of-mind
-atualizado: 2026-03-25
+atualizado: 2026-04-10
 ---
 
 # Top of Mind
@@ -9,18 +9,34 @@ atualizado: 2026-03-25
 
 ---
 
-## Prioridades desta semana
+## Prioridades desta semana (13/04 — semana 1 do lançamento)
 
-- [ ] Instalar MCPs no vault (smart-connections, qmd)
-- [ ] Subir IA de atendimento do Rodrigo/Concretize
-- [ ] Avançar no e-commerce Smartcell
+- [ ] Lançamento comercial ForYou Code — foco total em vendas
+- [ ] Prospecção via freelance radar (Workana, 99Freelas, GetNinjas, Upwork, LinkedIn, Trampos, Behance)
+- [ ] Formulário de escopo gratuito no ar — leads entrando pelo funil
+- [ ] Semana 1: apenas Funil 1 (IA de atendimento) — sem ecossistema ainda
+- [ ] Semana 4: Meta Ads vai ao ar (não antes)
+- [ ] Setup vault compartilhado (Eduardo + Marco) — em andamento
 
 ---
 
-## Decisões pendentes
+## Foco comercial atual
 
-- VPS: Hetzner ou Oracle Cloud?
-- Smartcell: prazo de entrega definir
+- **Produto foco semana 1-2:** IA de atendimento (ticket R$3.000–R$6.000)
+- **Produto foco semana 3+:** Ecossistema digital (ticket R$15.000–R$30.000)
+- **Lead magnet:** ForYou Life (app gratuito) + escopo gratuito via Meta Ads
+- **Canal principal:** freelance platforms + Meta Ads (semana 4)
+- Ver plano completo: [[knowledge/Plano Comercial ForYou Code 2026]]
+
+---
+
+## Decisões tomadas hoje (10/04)
+
+- Vault compartilhado via GitHub (Eduardo + Marco) — configurado
+- CLAUDE.md e memória dentro do vault — sincroniza para todos
+- Entrega de escopo = protótipo near-MVP no Vercel (não PDF)
+- Prazo de resposta ao cliente: 48h (não 24h)
+- Meta Ads: semana 4, não semana 1
 
 ---
 
@@ -28,9 +44,3 @@ atualizado: 2026-03-25
 
 - Marketing mensal Rodrigo: R$1.500/mês — não atrasar entrega
 - Meta Ads ForYou Code: 5 perfis, 15 contas — manter rodando
-
----
-
-## Contexto atual do Jarvis
-
-Camada 1 e 2 concluídas. Próximo passo: MCPs para conectar o vault ao Claude Code via smart-connections.
