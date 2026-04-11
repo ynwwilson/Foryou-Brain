@@ -1,0 +1,9 @@
+{
+  "name": "ui-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 2,
+  "triggers": ["ui", "design", "interface", "visual", "brand", "tokens"],
+  "produces": ["docs/design-spec.md", "src/styles/tokens.css", "src/styles/globals.css", "handoff.md"],
+  "reads": ["handoff.md", "knowledge/Design Tokens"]
+}

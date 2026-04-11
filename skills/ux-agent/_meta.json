@@ -1,0 +1,9 @@
+{
+  "name": "ux-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 1,
+  "triggers": ["ux", "fluxo", "experiencia", "usuario", "jornada", "telas"],
+  "produces": ["docs/ux-flows.md", "docs/screens.md", "handoff.md"],
+  "reads": ["Projetos/", "Agentes/memória/context/people.md", "Agentes/memória/context/business-context.md"]
+}

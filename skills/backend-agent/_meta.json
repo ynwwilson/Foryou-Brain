@@ -1,0 +1,9 @@
+{
+  "name": "backend-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 4,
+  "triggers": ["backend", "api", "banco", "supabase", "rotas", "schema", "auth"],
+  "produces": ["supabase/migrations/", "src/types/", "src/lib/supabase/", "src/app/api/", "handoff.md"],
+  "reads": ["handoff.md", "Projetos/", "Agentes/memória/context/business-context.md"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "security-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 6,
+  "triggers": ["seguranca", "security", "auditoria", "rls", "vulnerabilidade", "owasp"],
+  "produces": ["docs/security-report.md", "handoff.md", "correcoes diretas no codigo"],
+  "reads": ["src/app/api/", "supabase/migrations/", ".env.example", "handoff.md"]
+}

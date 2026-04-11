@@ -1,0 +1,10 @@
+{
+  "name": "stack-coordinator",
+  "version": "1.0.0",
+  "role": "orchestrator",
+  "position": 0,
+  "triggers": ["tarefa", "projeto", "app", "produto", "criar", "construir", "entregar", "coordenar"],
+  "produces": ["handoff.md", "ORCHESTRATION_LOG.md"],
+  "reads": ["Agentes/config/IDENTITY.md", "Agentes/memória/context/business-context.md", "Projetos/"],
+  "delegates_to": ["ux-agent", "ui-agent", "frontend-agent", "backend-agent", "security-agent", "architect-agent", "devops-agent", "qa-agent", "vendas-agent", "data-agent", "manus-agent"]
+}

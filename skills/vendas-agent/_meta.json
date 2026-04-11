@@ -1,0 +1,9 @@
+{
+  "name": "vendas-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 10,
+  "triggers": ["proposta", "venda", "lead", "cliente", "follow-up", "fechamento", "crm", "pipeline"],
+  "produces": ["proposta.md", "script-followup.md", "diagnostico-lead.md"],
+  "reads": ["knowledge/Processo de vendas da ForYou Code.md", "knowledge/Como precificar projetos.md", "Pessoas/", "Projetos/"]
+}

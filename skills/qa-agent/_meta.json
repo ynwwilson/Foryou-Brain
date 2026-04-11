@@ -1,0 +1,9 @@
+{
+  "name": "qa-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 7,
+  "triggers": ["qa", "qualidade", "teste", "testes", "verificar", "bugs"],
+  "produces": ["docs/qa-report.md", "handoff.md"],
+  "reads": ["handoff.md", "docs/ux-flows.md", "docs/screens.md"]
+}

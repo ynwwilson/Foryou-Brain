@@ -1,0 +1,18 @@
+{
+  "installed_at": 1774615774888,
+  "last_version": "4.3.0",
+  "smart_connections_folder": ".smart-connections",
+  "embedding_model": "TaylorAI/bge-micro-2",
+  "embed_input_min_chars": 50,
+  "show_full_path": false,
+  "language": "pt",
+  "api_key": "",
+  "smart_notes_embed_model": {
+    "adapter": "transformers",
+    "model_key": "TaylorAI/bge-micro-2"
+  },
+  "smart_blocks_embed_model": {
+    "adapter": "transformers",
+    "model_key": "TaylorAI/bge-micro-2"
+  }
+}

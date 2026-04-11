@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1774523103115
+    },
+    "postgres": {
+      "version": "1.0.0",
+      "installedAt": 1774529461424
+    },
+    "obsidian": {
+      "version": "1.0.0",
+      "installedAt": 1774529808351
+    },
+    "cloudflare-dns": {
+      "version": "1.0.0",
+      "installedAt": 1774530163499
+    }
+  }
+}

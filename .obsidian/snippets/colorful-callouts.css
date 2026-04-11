@@ -1,0 +1,50 @@
+/* ── Colorful Callouts ─────────────────────────── */
+
+/* [!NOTE] — azul */
+.callout[data-callout="note"] {
+  --callout-color: 37, 99, 235;
+  --callout-icon: lucide-info;
+}
+
+/* [!TIP] — verde */
+.callout[data-callout="tip"] {
+  --callout-color: 5, 150, 105;
+  --callout-icon: lucide-flame;
+}
+
+/* [!WARNING] — laranja */
+.callout[data-callout="warning"] {
+  --callout-color: 217, 119, 6;
+  --callout-icon: lucide-alert-triangle;
+}
+
+/* [!DANGER] — vermelho */
+.callout[data-callout="danger"] {
+  --callout-color: 220, 38, 38;
+  --callout-icon: lucide-zap;
+}
+
+/* [!SUCCESS] — verde escuro */
+.callout[data-callout="success"] {
+  --callout-color: 22, 163, 74;
+  --callout-icon: lucide-check-circle;
+}
+
+/* [!DECISION] — roxo */
+.callout[data-callout="decision"] {
+  --callout-color: 124, 58, 237;
+  --callout-icon: lucide-git-branch;
+}
+
+/* Estilo base dos callouts */
+.callout {
+  border-radius: 8px !important;
+  border-left-width: 4px !important;
+}
+
+.callout-title {
+  font-weight: 700 !important;
+  font-size: 0.9em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}

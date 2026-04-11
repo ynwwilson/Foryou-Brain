@@ -1,0 +1,20 @@
+2026-03-31 08:10:50,645 [INFO] ============================================================
+2026-03-31 08:10:50,645 [INFO] Iniciando consolidação — 2026-03-31 08:10:50
+2026-03-31 08:10:50,646 [INFO] Modo: REAL | IA: SIM
+2026-03-31 08:10:50,646 [INFO] ============================================================
+2026-03-31 08:10:50,647 [INFO] Encontrados 2 arquivo(s) na Inbox.
+2026-03-31 08:10:50,647 [INFO] Backup de 2 arquivo(s) → C:\Users\ynwwi\Projects\jarvis\stark\Stark\Memória_Longo_Prazo\2026-03-31
+2026-03-31 08:10:50,649 [INFO]   Backup: pending.md
+2026-03-31 08:10:50,650 [INFO]   Backup: queue.md
+2026-03-31 08:10:50,651 [INFO] Processando: pending.md
+2026-03-31 08:10:50,652 [INFO]   Regras não classificaram. Usando IA...
+2026-03-31 08:10:52,260 [ERROR]   [IA] Erro: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Usando 'Arquivo' como fallback.
+2026-03-31 08:10:52,260 [INFO]   Movido: pending.md → Arquivo/
+2026-03-31 08:10:52,261 [INFO] Processando: queue.md
+2026-03-31 08:10:52,261 [INFO]   Regras não classificaram. Usando IA...
+2026-03-31 08:10:52,479 [ERROR]   [IA] Erro: "Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted". Usando 'Arquivo' como fallback.
+2026-03-31 08:10:52,480 [INFO]   Movido: queue.md → Arquivo/
+2026-03-31 08:10:52,481 [INFO] Relatório salvo: 2026-03-31_relatorio-consolidacao.md
+2026-03-31 08:10:52,481 [INFO] ============================================================
+2026-03-31 08:10:52,481 [INFO] Consolidação concluída. 2 arquivo(s) processados.
+2026-03-31 08:10:52,481 [INFO] ============================================================

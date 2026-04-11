@@ -1,0 +1,9 @@
+{
+  "name": "safety",
+  "description": "Red Lines, tripla confirmação, audit log e rate limiter do sistema Jarvis",
+  "version": "1.0.0",
+  "scripts": {
+    "audit_log": "scripts/audit_log.py",
+    "rate_limiter": "scripts/rate_limiter.py"
+  }
+}

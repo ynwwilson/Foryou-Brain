@@ -1,0 +1,42 @@
+/* ── Folder Colors no File Explorer ───────────── */
+
+/* 00-home — amarelo ouro */
+.nav-folder-title[data-path="00-home"] {
+  color: #F59E0B !important;
+  font-weight: 700 !important;
+}
+
+/* atlas — azul */
+.nav-folder-title[data-path="atlas"] {
+  color: #3B82F6 !important;
+  font-weight: 700 !important;
+}
+
+/* knowledge — verde */
+.nav-folder-title[data-path="knowledge"] {
+  color: #10B981 !important;
+  font-weight: 700 !important;
+}
+
+/* inbox — laranja */
+.nav-folder-title[data-path="inbox"] {
+  color: #F97316 !important;
+  font-weight: 700 !important;
+}
+
+/* sessions — roxo */
+.nav-folder-title[data-path="sessions"] {
+  color: #8B5CF6 !important;
+  font-weight: 700 !important;
+}
+
+/* voice-notes — rosa */
+.nav-folder-title[data-path="voice-notes"] {
+  color: #EC4899 !important;
+  font-weight: 700 !important;
+}
+
+/* Hover nas pastas */
+.nav-folder-title:hover {
+  opacity: 0.8;
+}

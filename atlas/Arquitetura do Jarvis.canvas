@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"jarvis","type":"text","text":"# Jarvis\nSistema pessoal de automação e memória","x":0,"y":0,"width":260,"height":130},
+		{"id":"camada1","type":"text","text":"## Camada 1 ✅\nCLAUDE.md\nautoMemory\n~/.claude/memory/","x":-600,"y":-100,"width":260,"height":120},
+		{"id":"camada2","type":"text","text":"## Camada 2 ✅\nVault Stark (Obsidian)\nConhecimento estruturado\nMCPs a instalar","x":-600,"y":100,"width":260,"height":120},
+		{"id":"camada3","type":"text","text":"## Camada 3 ⏳\nbrain-ingest\nProcessar vídeo e áudio","x":-600,"y":300,"width":260,"height":100},
+		{"id":"cerebro","type":"text","text":"## Cérebro\nClaude Code v2.1.81","x":300,"y":-100,"width":220,"height":80},
+		{"id":"daemon","type":"text","text":"## Daemon 24/7\nOpenClaw → Telegram","x":300,"y":50,"width":220,"height":80},
+		{"id":"bridge","type":"text","text":"## Bridge\nPython → outros serviços","x":300,"y":200,"width":220,"height":80},
+		{"id":"browser","type":"text","text":"## Automação browser\nAdsPower perfil 14","x":300,"y":330,"width":220,"height":115},
+		{"id":"infra","type":"text","text":"## Infraestrutura ⏳\nVPS Hetzner ou Oracle Cloud","x":0,"y":250,"width":260,"height":80},
+		{"id":"front","type":"text","text":"## Frontend\nLovable — toda automação tem tela","x":0,"y":-240,"width":260,"height":120}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"camada1","fromSide":"right","toNode":"jarvis","toSide":"left","label":"alimenta"},
+		{"id":"e2","fromNode":"camada2","fromSide":"right","toNode":"jarvis","toSide":"left","label":"alimenta"},
+		{"id":"e3","fromNode":"camada3","fromSide":"right","toNode":"jarvis","toSide":"left","label":"alimenta"},
+		{"id":"e4","fromNode":"jarvis","fromSide":"right","toNode":"cerebro","toSide":"left","label":"usa"},
+		{"id":"e5","fromNode":"jarvis","fromSide":"right","toNode":"daemon","toSide":"left","label":"usa"},
+		{"id":"e6","fromNode":"jarvis","fromSide":"right","toNode":"bridge","toSide":"left","label":"usa"},
+		{"id":"e7","fromNode":"jarvis","fromSide":"right","toNode":"browser","toSide":"left","label":"usa"},
+		{"id":"e8","fromNode":"infra","fromSide":"top","toNode":"jarvis","toSide":"bottom","label":"hospeda"},
+		{"id":"e9","fromNode":"jarvis","fromSide":"top","toNode":"front","toSide":"bottom","label":"expõe via"}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "manus-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 12,
+  "triggers": ["instagram", "meta", "ads", "anuncio", "post", "reels", "whatsapp business", "campanha", "creator marketplace"],
+  "produces": ["post-publicado.md", "campanha-criada.md", "relatorio-meta.md"],
+  "reads": ["Pessoas/", "atlas/Funil TOF-MOF-BOF.md", "knowledge/Cada socio da ForYou Code tem persona.md", "knowledge/Todo conteudo da ForYou Code e classificado em TOF MOF ou BOF.md"],
+  "requires": "Manus Computer (ativo)"
+}

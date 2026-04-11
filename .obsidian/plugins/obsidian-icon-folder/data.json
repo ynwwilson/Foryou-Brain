@@ -1,0 +1,85 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [],
+    "recentlyUsedIconsSize": 5,
+    "rules": [
+      {
+        "rule": "00-home",
+        "icon": "lucide-home",
+        "color": "#F59E0B",
+        "order": 0
+      },
+      {
+        "rule": "atlas",
+        "icon": "lucide-map",
+        "color": "#3B82F6",
+        "order": 1
+      },
+      {
+        "rule": "knowledge",
+        "icon": "lucide-brain",
+        "color": "#10B981",
+        "order": 2
+      },
+      {
+        "rule": "inbox",
+        "icon": "lucide-inbox",
+        "color": "#F97316",
+        "order": 3
+      },
+      {
+        "rule": "sessions",
+        "icon": "lucide-calendar",
+        "color": "#8B5CF6",
+        "order": 4
+      },
+      {
+        "rule": "voice-notes",
+        "icon": "lucide-mic",
+        "color": "#EC4899",
+        "order": 5
+      }
+    ],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": true,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "00-home": "lucide-home",
+  "atlas": "lucide-map",
+  "knowledge": "lucide-brain",
+  "inbox": "lucide-inbox",
+  "sessions": "lucide-calendar",
+  "voice-notes": "lucide-mic",
+  "00-home/index.md": "lucide-layout-dashboard",
+  "00-home/top-of-mind.md": "lucide-zap",
+  "inbox/queue.md": "lucide-list-todo",
+  "atlas/Mapa de clientes.md": "lucide-users",
+  "atlas/Mapa do sistema de conteudo.md": "lucide-megaphone",
+  "atlas/Decisoes de stack da ForYou Code.md": "lucide-layers",
+  "atlas/Projetos ativos.md": "lucide-rocket",
+  "atlas/vault-information-arch.md": "lucide-git-branch",
+  "atlas/Ecossistema ForYou Code.canvas": "lucide-network",
+  "atlas/Arquitetura do Jarvis.canvas": "lucide-cpu",
+  "atlas/Funil TOF-MOF-BOF.canvas": "lucide-filter"
+}

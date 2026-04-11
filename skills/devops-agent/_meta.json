@@ -1,0 +1,9 @@
+{
+  "name": "devops-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 8,
+  "triggers": ["deploy", "github", "vercel", "supabase", "cloudflare", "infraestrutura", "dns"],
+  "produces": ["github repo", "vercel deploy", "supabase projeto", "cloudflare dns"],
+  "reads": ["handoff.md", "Projetos/"]
+}

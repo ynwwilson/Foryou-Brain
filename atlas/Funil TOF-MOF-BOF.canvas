@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"tof","type":"text","text":"## TOF — Topo do funil\n**Objetivo:** atrair desconhecidos\n\n**Hook:** problema real, sem mencionar produto\n\n**Exemplo:**\n_Você está pagando aluguel em tecnologia há anos_\n\n**Formatos:** vídeo curto, reels, carrossel opinião\n\n**CTA:** nenhum (ou muito leve)","x":-600,"y":0,"width":300,"height":440},
+		{"id":"mof","type":"text","text":"## MOF — Meio do funil\n**Objetivo:** educar quem conhece o problema\n\n**Hook:** autoridade + solução\n\n**Exemplo:**\n_Como entregamos um app completo para um cliente em 3 semanas_\n\n**Formatos:** carrossel case, vídeo demo\n\n**CTA:** leve (segue, salva)","x":-100,"y":0,"width":300,"height":400},
+		{"id":"bof","type":"text","text":"## BOF — Fundo do funil\n**Objetivo:** converter quem quer comprar\n\n**Hook:** prova social + resultado com número\n\n**Exemplo:**\n_Cliente faturou R$27k em 30 dias com o app que construímos_\n\n**Formatos:** depoimento, resultado, oferta direta\n\n**CTA:** direto (fala comigo, link, DM)","x":400,"y":0,"width":300,"height":400},
+		{"id":"regra","type":"text","text":"⚠️ Definir o funil ANTES de escrever o roteiro","x":-100,"y":480,"width":300,"height":160},
+		{"id":"ads","type":"text","text":"Meta Ads: impulsionar BOF para remarketing","x":400,"y":450,"width":300,"height":60}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"tof","fromSide":"right","toNode":"mof","toSide":"left","label":"aquece"},
+		{"id":"e2","fromNode":"mof","fromSide":"right","toNode":"bof","toSide":"left","label":"converte"},
+		{"id":"e3","fromNode":"bof","fromSide":"bottom","toNode":"ads","toSide":"top"}
+	]
+}

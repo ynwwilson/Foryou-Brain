@@ -1,0 +1,64 @@
+/* ── Dashboard Home (index.md) ─────────────────── */
+
+/* Tabelas com visual premium */
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+th {
+  background-color: var(--color-accent) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 0.78em !important;
+  letter-spacing: 0.06em !important;
+  padding: 10px 14px !important;
+}
+
+td {
+  padding: 8px 14px !important;
+  border-bottom: 1px solid var(--background-modifier-border) !important;
+}
+
+tr:hover td {
+  background-color: var(--background-modifier-hover) !important;
+}
+
+/* Checkboxes coloridos */
+input[type="checkbox"]:checked {
+  background-color: #10B981 !important;
+  border-color: #10B981 !important;
+}
+
+/* Headings com linha colorida */
+.markdown-preview-view h1 {
+  border-bottom: 3px solid var(--color-accent) !important;
+  padding-bottom: 6px !important;
+}
+
+.markdown-preview-view h2 {
+  border-left: 4px solid var(--color-accent) !important;
+  padding-left: 10px !important;
+  margin-left: -14px !important;
+}
+
+/* Links internos com destaque */
+.internal-link {
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-bottom: 1px dotted var(--color-accent) !important;
+}
+
+.internal-link:hover {
+  border-bottom: 1px solid var(--color-accent) !important;
+}
+
+/* Código inline */
+code {
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 0.88em !important;
+}

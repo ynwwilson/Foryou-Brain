@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"core","type":"text","text":"# ForYou Code\nEcossistema digital white-label","x":0,"y":-80,"width":280,"height":160},
+		{"id":"cliente","type":"text","text":"## Cliente\nCEO / dono de empresa\nquer seu próprio app","x":-500,"y":-300,"width":220,"height":180},
+		{"id":"equipe","type":"text","text":"## Equipe\nMestre — estratégia/vendas\nMarco — co-fundador\nEduardo — co-fundador","x":-500,"y":0,"width":220,"height":220},
+		{"id":"receita","type":"text","text":"## Modelos de receita\nProjeto fechado (high-ticket)\nMensalidade recorrente\nParticipação nos lucros","x":-200,"y":200,"width":220,"height":200},
+		{"id":"contratos","type":"text","text":"## Contratos\nAutentique\nCláusula de omissões","x":100,"y":200,"width":220,"height":160},
+		{"id":"clientes-ativos","type":"text","text":"## Clientes\n✅ Rainha da Aprovação R$27k\n🔄 Rodrigo/Concretize R$1.5k/mês\n🔧 Smartcell 20% lucro","x":-800,"y":200,"width":220,"height":200},
+		{"id":"stack","type":"text","text":"## Stack\nLovable (builder)\nSupabase (banco)\nVercel (deploy)\nCloudflare (CDN)","x":410,"y":40,"width":220,"height":200},
+		{"id":"produto","type":"text","text":"## Produto entregue\nCRM · Pagamentos\nWhatsApp API · IA\nE-commerce","x":410,"y":-415,"width":220,"height":230},
+		{"id":"ads","type":"text","text":"## Aquisição\nMeta Ads\n5 perfis · 5 BMs · 15 contas\nConteúdo orgânico","x":-80,"y":-480,"width":220,"height":180}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"cliente","fromSide":"right","toNode":"core","toSide":"left","label":"contrata"},
+		{"id":"e2","fromNode":"core","fromSide":"right","toNode":"produto","toSide":"left","label":"entrega"},
+		{"id":"e3","fromNode":"core","fromSide":"right","toNode":"stack","toSide":"left","label":"usa"},
+		{"id":"e4","fromNode":"equipe","fromSide":"right","toNode":"core","toSide":"left","label":"opera"},
+		{"id":"e5","fromNode":"core","fromSide":"bottom","toNode":"receita","toSide":"top","label":"gera"},
+		{"id":"e6","fromNode":"core","fromSide":"bottom","toNode":"contratos","toSide":"top","label":"usa"},
+		{"id":"e7","fromNode":"ads","fromSide":"bottom","toNode":"cliente","toSide":"top","label":"atrai"},
+		{"id":"e8","fromNode":"equipe","fromSide":"bottom","toNode":"clientes-ativos","toSide":"top","label":"atende"}
+	]
+}

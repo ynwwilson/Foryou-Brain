@@ -1,0 +1,9 @@
+{
+  "name": "architect-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 3,
+  "triggers": ["arquitetura", "estrutura", "schema", "decisao tecnica", "stack"],
+  "produces": ["docs/architecture.md", "docs/api-spec.md", "estrutura de pastas", "handoff.md"],
+  "reads": ["handoff.md", "docs/ux-flows.md", "Projetos/", "Agentes/memória/context/business-context.md"]
+}

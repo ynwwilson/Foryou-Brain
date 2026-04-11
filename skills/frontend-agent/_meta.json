@@ -1,0 +1,9 @@
+{
+  "name": "frontend-agent",
+  "version": "1.0.0",
+  "role": "specialist",
+  "position": 5,
+  "triggers": ["frontend", "react", "componentes", "telas", "ui implementacao", "next"],
+  "produces": ["src/components/", "src/app/", "tailwind.config.ts", "handoff.md"],
+  "reads": ["handoff.md", "docs/design-spec.md", "docs/ux-flows.md", "src/styles/tokens.css"]
+}
