@@ -308,14 +308,14 @@ Uso: José posta "construímos nosso próprio sistema" + credibilidade meta.
 
 | Função | Responsável | O que faz |
 |---|---|---|
-| Meta Ads + fechamento + demos | José | Gerencia campanhas Meta, conduz demos, calls e fecha propostas. Principal em conversão. |
+| Meta Ads + fechamento + demos + automações + scrapers + site | José | Gerencia campanhas Meta, conduz demos, calls e fecha propostas. Principal em conversão. **Único capaz de construir automações, scrapers e integrações técnicas** — radar de freelance, scraper de prospects, automações Claude, integrações ManyChat. **Responsável por construir o site institucional da ForYou Code e o formulário de pré-briefing personalizado** (landing page para os anúncios). |
 | Qualificação + DMs + pipeline | Marco | Responde DMs em até 1h, filtra leads, qualifica prospects, atualiza pipeline |
-| Design + produção + prospecção ativa | Eduardo | Visual de anúncios, PDFs de proposta, edição de vídeos, pesquisa de prospects — e entra em prospecção ativa pra treinar vendas |
+| Design + produção + prospecção ativa | Eduardo | Visual de anúncios, PDFs de proposta, edição de vídeos, pesquisa manual de prospects — e entra em prospecção ativa pra treinar vendas |
 
 **Por que essa divisão:**
-- José: melhor em conversão — lidera fechamento e demos
+- José: melhor em conversão — lidera fechamento e demos. **Único com habilidade técnica para construir automações, scrapers e sistemas** — tudo que envolve código ou integração passa por ele.
 - Marco: adequado pra qualificação — filtra e prepara antes de José entrar
-- Eduardo: foco em produção e design, mas participa da prospecção ativa (DMs, abordagens) pra desenvolver habilidade de venda. Não conduz proposta sozinho por enquanto — José ou Marco entram no fechamento.
+- Eduardo: foco em produção e design, mas participa da prospecção ativa (DMs, abordagens) pra desenvolver habilidade de venda. Não conduz proposta sozinho por enquanto — José ou Marco entram no fechamento. **Não tem habilidade técnica — pesquisa de prospects é manual.**
 
 **Review semanal:** toda sexta, 20 min. Três números: leads gerados, pipeline, fechamentos.
 
@@ -420,7 +420,7 @@ Criativo: 30–60s mostrando o painel do Rodrigo ou app da Dayane em uso real.
 - *"Construímos isso em semanas. Em 48h você vê como ficaria o seu — sem pagar nada."*
 
 **Campanha 2 — Fria (R$300–400/mês)**
-Público: donos de empresa, 32–55 anos, interesse em gestão/tecnologia/empreendedorismo, SP, RJ, BH, Fortaleza, Curitiba, Recife.
+Público: donos de empresa, 32–55 anos, interesse em gestão/tecnologia/empreendedorismo. Cidades: Patos de Minas, Uberlândia, BH, SP, RJ, Fortaleza, Curitiba, Recife. (Começar com Patos de Minas + Triângulo Mineiro — mercado local inexplorado + zero concorrência direta com esse posicionamento)
 Criativo: vídeo de problema — sem mostrar produto.
 
 Ângulos de copy pra testar:
@@ -473,9 +473,11 @@ Claude monitora as plataformas diariamente. Quando aparece projeto que bate com 
 | Análise de fit | Produto indicado (IA de atendimento ou ecossistema), complexidade estimada, nível de urgência do lead |
 | Ação sugerida | O que responder e quem deve entrar em contato |
 
-Objetivo: quando Eduardo abrir o alerta, já ter tudo na tela — sem precisar pesquisar nada manualmente.
+Objetivo: quando a equipe abrir o alerta, já ter tudo na tela — sem precisar pesquisar nada manualmente.
 
-Eduardo revisa e confirma. José ou Marco responde **em até 1h** — velocidade é o principal diferencial aqui, a maioria das respostas leva 24–48h.
+**Construção e manutenção do radar:** José — único com habilidade técnica para construir scrapers e automações. Configuração inicial e ajustes técnicos são responsabilidade exclusiva dele.
+
+Marco revisa os alertas e confirma. José ou Marco responde **em até 1h** — velocidade é o principal diferencial aqui, a maioria das respostas leva 24–48h.
 
 **Resposta padrão (não parecer template):**
 > "Oi [nome]! Vi seu projeto e ficou bem claro o que você precisa. A gente já construiu algo muito parecido pra [escola/clínica/distribuidora com X alunos/clientes]. Prefiro te mostrar do que descrever — tem 10 min hoje ou amanhã?"
@@ -484,7 +486,7 @@ Eduardo revisa e confirma. José ou Marco responde **em até 1h** — velocidade
 - Lead já decidiu contratar — intenção máxima
 - Zero ad spend
 - Resposta em 1h vs. média de 48h do mercado = diferencial absoluto
-- Claude faz o monitoramento e triagem — Eduardo só confirma
+- Claude faz o monitoramento e triagem — Marco revisa e confirma (scraper construído por José)
 
 **Volume esperado:** 5–15 projetos relevantes por semana dependendo dos nichos monitorados.
 
@@ -906,6 +908,43 @@ José cola os números da semana (alcance, DMs recebidas, qual vídeo performou)
 
 ---
 
+## 18.5 Site Institucional ForYou Code — José
+
+**Responsável:** José — único com habilidade técnica para construir.
+**Prazo:** construir na semana 1–2, lançar junto com Meta Ads na semana 4.
+**Stack:** Antigravity ou Lovable + Vercel + domínio foryoucode.com.br
+
+### O que o site precisa ter
+
+**Página principal:**
+- Headline direto: posicionamento claro (não é agência, não é SaaS — constrói o ecossistema do cliente)
+- 2 produtos destacados: IA de Atendimento + Ecossistema Completo
+- Cases: Dayane (escola) e Rodrigo (IA de atendimento) com resultado real
+- CTA único: botão para o formulário de pré-briefing
+
+**Formulário de pré-briefing (página separada ou modal):**
+1. Tipo de negócio
+2. Nº de clientes/alunos/pacientes ativos
+3. Maior problema com tecnologia ou atendimento hoje
+4. O que gostaria que um sistema seu fizesse
+5. Faturamento mensal aproximado (faixas)
+6. Nome + WhatsApp
+
+Mensagem pós-envio: *"Perfeito! Em até 48h você recebe no WhatsApp o escopo de como seria o app do seu negócio."*
+
+**Por que o site é necessário agora:**
+- Link obrigatório nas plataformas de freela (Workana, 99Freelas, etc.) — perfis sem site perdem credibilidade
+- Destino dos anúncios Meta Ads na semana 4
+- Prova social instantânea quando prospect pesquisa a empresa
+- Formulário integrado ao fluxo de qualificação via Claude
+
+### O que NÃO precisa ter
+- Blog, sobre nós extenso, muitas páginas — one-pager funciona melhor
+- Preço listado — nunca colocar preço no site
+- Chat ao vivo — tudo vai para WhatsApp via botão
+
+---
+
 ## 19. ManyChat + Claude — Instagram Automatizado
 
 Três flows distintos com objetivos diferentes: crescimento de seguidores, entrega de valor e qualificação de leads.
@@ -914,7 +953,7 @@ Três flows distintos com objetivos diferentes: crescimento de seguidores, entre
 
 ### Flow 1 — Novo seguidor → Boas-vindas + acesso ao ForYou Life
 
-Trigger: qualquer pessoa que segue qualquer perfil dos sócios ou @foryoucode.
+Trigger: qualquer pessoa que segue qualquer perfil dos sócios ou @foryoucodee.
 
 O presente é o mesmo em todos os perfis: **acesso gratuito ao ForYou Life** — o copiloto inteligente do empresário (ver seção 20).
 
@@ -1000,10 +1039,12 @@ Manda o vídeo sem pressão, agradece, encerra. Entra em remarketing.
 - [ ] Criar nota de pipeline no Obsidian
 - [ ] Definir dia da semana para gravação dos 3 demos (Assets 1, 2, 3)
 
-**Segunda 14/04:**
-- [ ] Eduardo: rodar scraper — primeira lista de 30 prospects por nicho + cidade
-- [ ] Marco: ativar radar de freelance (Workana, 99Freelas, GetNinjas)
-- [ ] José: planejar estrutura das campanhas Meta Ads (públicos, objetivos) — construção e lançamento na semana 4
+**Segunda 13/04:**
+- [ ] Eduardo: pesquisa manual de 30 prospects por nicho + cidade (Instagram)
+- [ ] Marco: criar contas nas plataformas de freela (Workana, 99Freelas, Freelancer.com) + otimizar LinkedIn
+- [ ] Eduardo: criar contas GetNinjas, Trampos.co + otimizar LinkedIn
+- [ ] José: criar e configurar contas de anúncio no Meta Ads (pixel, públicos, estrutura de campanhas)
+- [ ] José: começar construção do site ForYou Code + formulário de pré-briefing (Antigravity/Lovable)
 
 **Terça 15/04 — Dia dos demos:**
 - [ ] Gravar Asset 1: painel do Rodrigo (2–3 min)
@@ -1014,7 +1055,7 @@ Manda o vídeo sem pressão, agradece, encerra. Entra em remarketing.
 **Quarta 16/04:**
 - [ ] Marco: configurar mensagem automática WhatsApp Business
 - [ ] José + Marco + Eduardo: primeiras 5 DMs com prospects da lista do Eduardo
-- [ ] José: construir estrutura do formulário de pré-briefing (landing page para escopo gratuito — lançar na semana 4 junto com os anúncios)
+- [ ] José: construir site institucional ForYou Code + formulário de pré-briefing personalizado (landing page para escopo gratuito — lançar na semana 4 junto com os anúncios)
 
 **Quinta 17/04:**
 - [ ] José: postar Asset 1 no perfil — falando do problema, sem script

@@ -18,17 +18,19 @@ IA de atendimento via WhatsApp com CRM integrado. Automação de atendimento qua
 
 ---
 
-## Status Técnico (08/04/2026)
+## Status Técnico (13/04/2026)
 
 | Item | Status | Detalhe |
 |---|---|---|
-| **Backend** | ✅ Online | https://concretize-ia.vercel.app — 36/36 testes passando |
+| **Backend** | ✅ Online | https://concretize-ia.vercel.app — 61/61 testes locais passando |
 | **WhatsApp** | ✅ Conectado | Instância `megastart-Mg0tnMyPBvv` em `apistart02.megaapi.com.br` |
-| **Chatwoot** | ✅ Corrigido | Reescrito para DeviseTokenAuth com refresh automático via Redis |
-| **Supabase** | ✅ Funcional | Tabela `lead_memory` criada e operando. RLS ativa. |
+| **Chatwoot** | ✅ Corrigido | DeviseTokenAuth com refresh automático via Redis continua no ar |
+| **Supabase** | ✅ Funcional | `lead_memory` + RAG de produtos/FAQ já integrados ao backend |
 | **Frontend** | ✅ Online | https://concretize-insight-hub.vercel.app |
-| **IA ativa** | ⚠️ Verificar | Toggle `is_active` no painel — confirmar se está ON |
-| **Download de Mídia** | 🔴 Pendente | Audio/imagem chegam como INDISPONIVEL — investigação em andamento |
+| **IA ativa** | ⚠️ Verificar | Confirmar `is_active` no painel e envs novas da rota barata |
+| **Roteamento de IA** | ✅ Implementado no código | Router já decide entre regra/cache/FAQ, `local_llm`, `remote_fallback` e `premium_exception` |
+| **Migração off-Claude** | 🟡 Parcial | Resposta principal de texto já pode sair por Groq/Ollama; memória, análise, follow-up e visão ainda usam Claude |
+| **Download de Mídia** | 🟡 Parcialmente corrigido | Pipeline e retries melhoraram; ainda precisa validar em produção com logs reais |
 
 ---
 
@@ -231,18 +233,101 @@ O erro real que a MegaAPI retorna quando tenta fazer o download. Pode ser:
 
 ---
 
+## Sessão 13/04/2026 — Onde paramos na troca do Claude
+
+### O que o repositório mostra hoje
+- Os commits `08bed92` e `5f5cd6e` adicionaram uma camada de roteamento de IA com caminho barato.
+- O fluxo principal de resposta ao cliente agora passa por `routeAiReply`, que tenta nesta ordem: regra direta, cache Redis, FAQ RAG, LLM local (`Ollama`), fallback remoto barato (`Groq`) e só então exceção premium (`Claude`).
+- Em outras palavras: a troca do Claude para outra IA já foi parcialmente implementada no código.
+
+### Qual IA substituta entrou de fato no código
+- A lembrança de "talvez era Gemini" nao bate com o estado atual do repositório.
+- Nao existe integração `Gemini` implementada neste backend.
+- O que foi implementado de verdade foi:
+  - `Groq` como fallback remoto barato para respostas de texto
+  - `Ollama` como opção local/primária de baixo custo, pensado para rodar fora da Vercel
+
+### O que ainda continua no Claude
+- Exceções premium da resposta principal
+- Evolução da `lead_memory`
+- Avaliação de intenção comercial
+- Sugestão de follow-up
+- Extração de contexto visual de imagens/comprovantes
+
+### Conclusão prática
+- A base para sair do Claude já existe e está verde nos testes.
+- A troca total ainda nao aconteceu.
+- O próximo passo operacional mais seguro é ativar `Groq` em produção para o caminho principal de texto e manter Claude só nas exceções premium.
+- `Ollama` só faz sentido se houver endpoint acessível pela Vercel; `127.0.0.1` nao serve em produção.
+- Se a meta continuar sendo `Gemini`, isso exigirá nova integração; hoje nao há código pronto para isso.
+
 ## Próximos Passos (em ordem de prioridade)
 
 1. **URGENTE:** Ver o erro real do download de mídia
-   - Opção A: `! npx vercel login` no terminal do Claude Code, depois `npx vercel logs concretize-ia --follow`
+   - Opção A: abrir `npx vercel logs <deployment-url>` ao vivo enquanto um teste real de áudio/imagem é enviado
    - Opção B: Abrir Vercel dashboard (https://vercel.com/ynwwilson-9617s-projects/concretize-ia) → Functions → webhook → logs recentes
    - Opção C: Criar tabela `failed_messages` no Supabase SQL Editor e retestar
 
-2. Criar tabela `failed_messages` no Supabase (a função já existe no código, só falta a tabela)
+2. Consolidar a especificação operacional da nova arquitetura de IA:
+   - `Gemini` como primário
+   - `OpenAI` como fallback completo
+   - mesmo contexto no fallback
+   - `Claude` removido do runtime
 
-3. Configurar SSH com chave para o VPS Hostinger
+3. Executar a migração total dos fluxos ainda híbridos:
+   - memória do lead
+   - análise de intenção
+   - follow-up
+   - mídia, visão e transcrição com blindagem completa
 
-4. Configurar UptimeRobot para monitorar https://concretize-ia.vercel.app/api/status
+4. Criar tabela `failed_messages` no Supabase (a função já existe no código, só falta a tabela)
+
+5. Configurar SSH com chave para o VPS Hostinger
+
+6. Configurar UptimeRobot para monitorar https://concretize-ia.vercel.app/api/status
+
+## Sessão 13/04/2026 — Continuação: decisão final da arquitetura de IA
+
+### Decisão consolidada com o usuário
+O objetivo final foi definido assim:
+- `Gemini` deve ser a IA principal para tudo
+- `OpenAI` deve ser o fallback completo
+- `Claude` deve sair totalmente do runtime e idealmente do código útil
+- o fallback deve preservar o mesmo contexto
+- o cliente não pode sentir falha operacional
+
+### Diagnóstico consolidado
+A arquitetura não deve assumir que provedores multimodais nunca falham. Mesmo com Gemini e OpenAI, ainda existem riscos de timeout, rate limit, resposta malformada, falha temporária, payload inválido, arquivo corrompido, limite de tamanho, instabilidade de rede, erro de env e mudanças de comportamento do modelo.
+
+### Princípio técnico aprovado
+A blindagem correta deve ter:
+- validação de entrada
+- `Gemini` primário
+- `OpenAI` fallback
+- mesmo contexto para ambos
+- guardrails fortes
+- logs estruturados
+- resposta operacional segura se ambos falharem
+
+### Status da implementação hoje
+O repositório está híbrido:
+- Gemini já entrou na resposta principal
+- OpenAI já existe em parte do fallback
+- Claude ainda está presente em memória, análise e follow-up
+- testes ainda refletem em partes a arquitetura anterior
+
+### O que o usuário vai trazer na próxima sessão
+O usuário vai retornar com material refinado para completar a especificação operacional da IA nos blocos:
+- `PROMPT`
+- `REGRAS COMERCIAIS`
+- `GUARDRAILS`
+- `MEMORIA DO LEAD`
+- `PRODUTOS/RAG`
+
+### Próximo passo exato quando a próxima sessão começar
+1. receber os blocos refinados do usuário
+2. consolidar a especificação final
+3. iniciar a implementação completa da migração `Gemini + OpenAI fallback`
 
 ---
 

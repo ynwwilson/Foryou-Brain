@@ -11,7 +11,7 @@
 - Parceiros: Marco e Eduardo
 - Perfil: builder não-técnico. Trabalha via interfaces visuais (Lovable/Antigravity). Prioriza automação máxima.
 - Carga de trabalho: extremamente pesada. Sem tempo a perder. Respostas diretas sempre.
-- Localização: Brasil. Comunicação em português brasileiro.
+- Localização: Patos de Minas, Minas Gerais. Endereço: Rua Artur Magalhães, 1350 - B3 301, CEP 38703-572. Comunicação em português brasileiro.
 
 ---
 
