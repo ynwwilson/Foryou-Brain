@@ -26,26 +26,16 @@ Auto save: 10min · Auto push: 5min · Auto pull: 5min · Pull on startup: ✅
 
 ---
 
-## ⚠️ ETAPA 2 — Node.js: instalar antes de continuar
+## ✅ ETAPA 2 — Node.js — CONCLUÍDA
 
-`where node` não retornou nada — Node.js não está instalado.
-
-### 2.1 Instalar Node.js
-
-Baixar e instalar LTS em: https://nodejs.org
-
-Após instalar, **fechar e reabrir o PowerShell** e confirmar:
-
-```powershell
-node --version
-where node
-```
-
-Deve retornar algo como `C:\Program Files\nodejs\node.exe`.
+- Node v24.14.1 ✅
+- npm 11.11.0 ✅
+- git 2.53.0 ✅
+- Pastas `~/.claude/hooks` e `~/.session-saver/cache` criadas ✅
 
 ---
 
-## ETAPA 3 — Session Saver: criar arquivos
+## ⚠️ ETAPA 3 — Session Saver: criar arquivos — EM ANDAMENTO
 
 ### 3.1 Criar config.json
 
