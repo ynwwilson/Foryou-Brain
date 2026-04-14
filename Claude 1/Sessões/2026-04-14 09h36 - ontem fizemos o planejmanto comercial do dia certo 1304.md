@@ -1,6 +1,6 @@
 ---
 date: 2026-04-14 09h36
-fim: 2026-04-14 09:56:00
+fim: 2026-04-14 10:15:11
 tool: claude1
 title: "ontem fizemos o planejmanto comercial do dia certo 1304"
 session_id: 114b6a9c-4636-4865-b9d3-18a353a6bb67
@@ -9,7 +9,7 @@ tags: [claude1, sessão]
 
 # ontem fizemos o planejmanto comercial do dia certo 1304
 
-> **Ferramenta:** Claude · **Início:** 2026-04-14 09h36 · **Fim:** 2026-04-14 09:56:00
+> **Ferramenta:** Claude · **Início:** 2026-04-14 09h36 · **Fim:** 2026-04-14 10:15:11
 > **Dir:** `C:\Users\ynwwi`
 
 ## Objetivo
@@ -37,6 +37,16 @@ sim cace, plano comercial dia 13/04 no obsidian que você vai…
 
 **Mestre:** te falar que tudo de ontem da parte do marco e eduardo foi feita, jose nao conseguiu porque tava resolvendo coisas de clientes ativos, mas nao importa, pois ele vai fazer o de ontem, hoje. Então agora preciso que você crie o plano pra hoje, completo tambem igual o que tem, mas para terça feira, 14/04 com base em tudo do comercial, que foi feito, que nao foi, que precisa ser feito hoje, etc. Leita o plano comercial inteiro da foryoucode e do dia 13 tambem para ter mais contexto, apenas isso que é pra ler
 > 09:55
+
+---
+
+**Mestre:** nao gostei desse plano, porque muitas das plataformas de frella ainda nem aceitaram, por precisar de aprovação, então existem coisas que nao da pra fazer por conta disso
+> 10:11
+
+---
+
+**Mestre:** só isso mesmo, me de um resumo de como está pra cada agora
+> 10:15
 
 ---
 
