@@ -4,7 +4,7 @@ fim: 2026-04-14 14:40:17
 tool: claude-nova
 title: "onde paramos, estavamos fazendo algo"
 session_id: 47401bf5-6d69-4014-a840-203850a3e705
-tags: [claude-nova, sessão]
+tags: [claude-nova, sessão, completo]
 ---
 
 # onde paramos, estavamos fazendo algo
