@@ -1,0 +1,17 @@
+{
+  "vaultPath": "C:/Users/eduar/Foryou-Brain",
+  "author": "Eduardo",
+  "tools": {
+    "claude1":       { "folder": "Claude 1",    "name": "Claude"      },
+    "claude-nova":   { "folder": "Claude Nova", "name": "Claude Nova" },
+    "codex":         { "folder": "Codex",       "name": "Codex"       },
+    "antigravity":   { "folder": "Antigravity", "name": "Antigravity" }
+  },
+  "codexSessionsPath": "C:/Users/eduar/.codex/sessions",
+  "antigravityBrainPath": "C:/Users/eduar/.gemini/antigravity/brain",
+  "heartbeatMaxAge": 120000,
+  "maxTextLength": 800,
+  "maxExchanges": 15,
+  "catchUpDays": 7,
+  "nodePath": "C:/Program Files/nodejs/node.exe"
+}
