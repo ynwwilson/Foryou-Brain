@@ -2,5 +2,8 @@
 .obsidian/workspace-mobile.json
 .obsidian/plugins/obsidian-local-rest-api/data.json
 .obsidian/plugins/mcp-tools/bin/
+.obsidian/community-plugins.json
+.obsidian/graph.json
+.smart-env/
 *.tmp
 *.exe
