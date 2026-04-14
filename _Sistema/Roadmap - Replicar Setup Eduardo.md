@@ -11,79 +11,48 @@ tags: [roadmap, sistema, eduardo, setup]
 
 ---
 
-## PRÉ-REQUISITOS — verificar antes de começar
+## ✅ ETAPA 1 — Obsidian: plugins e configurações — CONCLUÍDA
 
-No terminal do Eduardo, confirmar que tem:
+### ✅ 1.1 Plugins ativados
+Todos os plugins ativados: obsidian-git, Local REST API, Dataview, Smart Connections, MCP Tools, Style Settings, Icon Folder, Banners, Open in Terminal.
 
-```powershell
-node --version    # precisa ser v18+
-npm --version
-git --version
+### ✅ 1.2 obsidian-git configurado
+Auto save: 10min · Auto push: 5min · Auto pull: 5min · Pull on startup: ✅
+
+### ✅ 1.3 API Key do Local REST API obtida
 ```
-
-Se Node não estiver instalado: https://nodejs.org (baixar LTS)
+7b03eb071579b195785f1802576b81ffefd389b5845a21b463c3aa12fa4e8bb3
+```
 
 ---
 
-## ETAPA 1 — Obsidian: plugins e configurações
+## ⚠️ ETAPA 2 — Node.js: instalar antes de continuar
 
-O vault já está clonado em `C:\Users\eduar\Foryou-Brain`.
+`where node` não retornou nada — Node.js não está instalado.
 
-### 1.1 Ativar plugins
+### 2.1 Instalar Node.js
 
-`Settings → Community Plugins → Turn on community plugins` (se ainda não estiver ligado)
+Baixar e instalar LTS em: https://nodejs.org
 
-Em `Installed plugins`, ativar **todos**:
+Após instalar, **fechar e reabrir o PowerShell** e confirmar:
 
-| Plugin | Função |
-|--------|--------|
-| obsidian-git | Sync automático com GitHub |
-| Local REST API | Conexão com Claude via MCP |
-| Dataview | Queries nas notas |
-| Smart Connections | Busca semântica |
-| MCP Tools | Servidor MCP interno |
-| Style Settings | Estilos customizados |
-| Icon Folder | Ícones nas pastas |
-| Banners | Banners nas notas |
-| Open in Terminal | Abrir terminal na pasta |
+```powershell
+node --version
+where node
+```
 
-### 1.2 Configurar obsidian-git
-
-`Settings → Obsidian Git`:
-
-| Configuração | Valor |
-|---|---|
-| Auto save interval | 10 min |
-| Auto push interval | 5 min |
-| Auto pull interval | 5 min |
-| Pull on startup | ✅ ativado |
-| Pull before push | ✅ ativado |
-| Commit message | `vault: auto-sync {{date}}` |
-| Date format | `YYYY-MM-DD HH:mm:ss` |
-| Sync method | Merge |
-
-### 1.3 Pegar a API Key do Local REST API
-
-`Settings → Local REST API` → copiar o valor de **API Key**
-
-Vai precisar dela na Etapa 4 (MCP do Claude).
+Deve retornar algo como `C:\Program Files\nodejs\node.exe`.
 
 ---
 
-## ETAPA 2 — Session Saver: criar arquivos
+## ETAPA 3 — Session Saver: criar arquivos
 
-### 2.1 Criar pasta dos hooks
+### 3.1 Criar config.json
+
+No PowerShell, rodar o bloco completo:
 
 ```powershell
-mkdir C:\Users\eduar\.claude\hooks
-mkdir C:\Users\eduar\.session-saver\cache
-```
-
-### 2.2 Criar config.json
-
-Criar arquivo `C:\Users\eduar\.session-saver\config.json`:
-
-```json
+$config = @'
 {
   "vaultPath": "C:/Users/eduar/Foryou-Brain",
   "author": "Eduardo",
@@ -101,37 +70,31 @@ Criar arquivo `C:\Users\eduar\.session-saver\config.json`:
   "catchUpDays": 7,
   "nodePath": "C:/Program Files/nodejs/node.exe"
 }
+'@
+New-Item -Path "C:\Users\eduar\.session-saver" -ItemType Directory -Force
+Set-Content -Path "C:\Users\eduar\.session-saver\config.json" -Value $config -Encoding UTF8
 ```
 
-> **Atenção:** confirmar o caminho do Node com `where node` antes de usar.
-
-### 2.3 Copiar os hooks
-
-Copiar os 3 arquivos do PC do Wilson para `C:\Users\eduar\.claude\hooks\`:
-
-- `session-saver.js`
-- `codex-watcher.js`
-- `antigravity-watcher.js`
-
-Esses arquivos leem o `config.json`, então nada dentro deles precisa ser alterado.
-
-### 2.4 Criar package.json e instalar dependências
-
-Criar `C:\Users\eduar\.claude\hooks\package.json`:
-
-```json
-{
-  "name": "session-saver-hooks",
-  "version": "1.0.0",
-  "description": "Claude Code hooks + session watchers",
-  "main": "session-saver.js",
-  "dependencies": {
-    "chokidar": "^3.6.0"
-  }
-}
+Verificar:
+```powershell
+cat C:\Users\eduar\.session-saver\config.json
 ```
 
-Instalar:
+### 3.2 Copiar os hooks
+
+```powershell
+New-Item -Path "C:\Users\eduar\.claude\hooks" -ItemType Directory -Force
+New-Item -Path "C:\Users\eduar\.session-saver\cache" -ItemType Directory -Force
+
+Copy-Item "C:\Users\eduar\Foryou-Brain\_Sistema\Scripts\session-saver.js" "C:\Users\eduar\.claude\hooks\"
+Copy-Item "C:\Users\eduar\Foryou-Brain\_Sistema\Scripts\codex-watcher.js" "C:\Users\eduar\.claude\hooks\"
+Copy-Item "C:\Users\eduar\Foryou-Brain\_Sistema\Scripts\antigravity-watcher.js" "C:\Users\eduar\.claude\hooks\"
+Copy-Item "C:\Users\eduar\Foryou-Brain\_Sistema\Scripts\package.json" "C:\Users\eduar\.claude\hooks\"
+```
+
+> Se os scripts não estiverem em `_Sistema/Scripts/`, copiar manualmente do PC do Wilson.
+
+### 3.3 Instalar dependências
 
 ```powershell
 cd C:\Users\eduar\.claude\hooks
@@ -140,21 +103,12 @@ npm install
 
 ---
 
-## ETAPA 3 — Claude Code: configurar hooks
+## ETAPA 4 — Claude Code: configurar hooks
 
-### 3.1 Descobrir caminho do Node
+### 4.1 Criar settings.json do Claude 1
 
 ```powershell
-where node
-```
-
-Vai retornar algo como `C:\Program Files\nodejs\node.exe`. Usar esse caminho nos próximos arquivos.
-
-### 3.2 Criar settings.json do Claude 1
-
-Criar `C:\Users\eduar\.claude\settings.json`:
-
-```json
+$settings = @'
 {
   "hooks": {
     "Stop": [
@@ -184,23 +138,41 @@ Criar `C:\Users\eduar\.claude\settings.json`:
     "allow": [
       "Bash(*)"
     ]
+  },
+  "mcpServers": {
+    "obsidian": {
+      "command": "C:\\Users\\eduar\\Foryou-Brain\\.obsidian\\plugins\\mcp-tools\\bin\\mcp-server.exe",
+      "args": [],
+      "env": {
+        "OBSIDIAN_API_KEY": "7b03eb071579b195785f1802576b81ffefd389b5845a21b463c3aa12fa4e8bb3"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\eduar\\Foryou-Brain"
+      ]
+    }
   }
 }
+'@
+New-Item -Path "C:\Users\eduar\.claude" -ItemType Directory -Force
+Set-Content -Path "C:\Users\eduar\.claude\settings.json" -Value $settings -Encoding UTF8
 ```
 
-### 3.3 Criar pasta e settings.json do Claude Nova
+### 4.2 Criar settings.json do Claude Nova
 
 ```powershell
-mkdir C:\Users\eduar\.claude-nova
+New-Item -Path "C:\Users\eduar\.claude-nova" -ItemType Directory -Force
+Set-Content -Path "C:\Users\eduar\.claude-nova\settings.json" -Value $settings -Encoding UTF8
 ```
 
-Criar `C:\Users\eduar\.claude-nova\settings.json` com o mesmo conteúdo do 3.2 acima.
+### 4.3 Criar CLAUDE.md do Claude 1
 
-### 3.4 Criar CLAUDE.md do Claude 1
-
-Criar `C:\Users\eduar\.claude\CLAUDE.md`:
-
-```markdown
+```powershell
+$claudeMd = @'
 ## Auto-Context de Sessão
 
 Ao iniciar qualquer sessão, leia as últimas 30 linhas da nota mais recente em:
@@ -209,42 +181,25 @@ Ao iniciar qualquer sessão, leia as últimas 30 linhas da nota mais recente em:
 Para encontrar a nota mais recente: é o arquivo `.md` com o nome mais alto em ordem alfabética (os nomes começam com data `YYYY-MM-DD HHhMM`). Ignore a pasta `_completo/`.
 
 Se a pasta estiver vazia ou não existir, ignore silenciosamente e continue normalmente.
+'@
+Set-Content -Path "C:\Users\eduar\.claude\CLAUDE.md" -Value $claudeMd -Encoding UTF8
 ```
 
-### 3.5 Criar CLAUDE.md do Claude Nova
+### 4.4 Criar CLAUDE.md do Claude Nova
 
-Criar `C:\Users\eduar\.claude-nova\CLAUDE.md` com o mesmo conteúdo, trocando apenas:
-- `Claude 1/Sessões/Eduardo/` → `Claude Nova/Sessões/Eduardo/`
+```powershell
+$claudeNovaMd = @'
+## Auto-Context de Sessão
 
----
+Ao iniciar qualquer sessão, leia as últimas 30 linhas da nota mais recente em:
+`C:/Users/eduar/Foryou-Brain/Claude Nova/Sessões/Eduardo/`
 
-## ETAPA 4 — MCP Servers (Claude se conectar ao Obsidian)
+Para encontrar a nota mais recente: é o arquivo `.md` com o nome mais alto em ordem alfabética (os nomes começam com data `YYYY-MM-DD HHhMM`). Ignore a pasta `_completo/`.
 
-Adicionar ao `C:\Users\eduar\.claude\settings.json` dentro de `"hooks": {...}`, no mesmo nível:
-
-```json
-"mcpServers": {
-  "obsidian": {
-    "command": "C:\\Users\\eduar\\Foryou-Brain\\.obsidian\\plugins\\mcp-tools\\bin\\mcp-server.exe",
-    "args": [],
-    "env": {
-      "OBSIDIAN_API_KEY": "COLAR_A_KEY_DO_PASSO_1.3_AQUI"
-    }
-  },
-  "filesystem": {
-    "command": "npx",
-    "args": [
-      "-y",
-      "@modelcontextprotocol/server-filesystem",
-      "C:\\Users\\eduar\\Foryou-Brain"
-    ]
-  }
-}
+Se a pasta estiver vazia ou não existir, ignore silenciosamente e continue normalmente.
+'@
+Set-Content -Path "C:\Users\eduar\.claude-nova\CLAUDE.md" -Value $claudeNovaMd -Encoding UTF8
 ```
-
-> Substituir `COLAR_A_KEY_DO_PASSO_1.3_AQUI` pela API Key copiada no passo 1.3.
-
-Fazer o mesmo no `C:\Users\eduar\.claude-nova\settings.json`.
 
 ---
 
@@ -278,11 +233,9 @@ Os dois devem aparecer como `online`.
 
 ### 6.1 Criar script de boot
 
-Criar `C:\pm2-startup\pm2-resurrect.bat`:
-
-```bat
-@echo off
-"C:\Program Files\nodejs\node.exe" "C:\Users\eduar\AppData\Roaming\npm\node_modules\pm2\bin\pm2" resurrect
+```powershell
+New-Item -Path "C:\pm2-startup" -ItemType Directory -Force
+Set-Content -Path "C:\pm2-startup\pm2-resurrect.bat" -Value "@echo off`r`n`"C:\Program Files\nodejs\node.exe`" `"C:\Users\eduar\AppData\Roaming\npm\node_modules\pm2\bin\pm2`" resurrect" -Encoding ASCII
 ```
 
 ### 6.2 Registrar no Task Scheduler
@@ -302,13 +255,9 @@ Register-ScheduledTask -TaskName "PM2 Auto Start" -Action $action -Trigger $trig
 Get-ScheduledTask -TaskName "PM2 Auto Start"
 ```
 
-Deve retornar `Ready`.
-
 ---
 
 ## ETAPA 7 — Windows Defender: exclusões
-
-Para o pm2 e hooks não serem bloqueados:
 
 ```powershell
 Add-MpPreference -ExclusionPath "C:\Users\eduar\.claude"
@@ -323,25 +272,22 @@ Add-MpPreference -ExclusionProcess "pm2"
 
 ## ETAPA 8 — Teste final
 
-### 8.1 Testar session-saver manualmente
+### 8.1 Abrir Claude e testar
 
 ```powershell
-echo '{"transcript_path":"C:/Users/eduar/.claude/projects/teste/test.jsonl","session_id":"test-123","cwd":"C:/Users/eduar"}' | node "C:/Users/eduar/.claude/hooks/session-saver.js"
+claude
 ```
 
-Não deve retornar erro.
+1. Digitar qualquer coisa e responder
+2. Fechar com `/exit`
+3. Verificar: `ls "C:\Users\eduar\Foryou-Brain\Claude 1\Sessões\Eduardo\"`
 
-### 8.2 Abrir Claude e testar
+Deve aparecer uma nota `.md`.
 
-1. Abrir Claude 1 no terminal: `claude`
-2. Digitar qualquer coisa e responder
-3. Fechar com `/exit`
-4. Verificar se apareceu nota em `C:\Users\eduar\Foryou-Brain\Claude 1\Sessões\Eduardo\`
+### 8.2 Verificar sync com Wilson
 
-### 8.3 Verificar sync com Wilson
-
-1. Eduardo faz pull no Obsidian: `Ctrl+P → Obsidian Git: Pull`
-2. Wilson verifica no vault se a nota do Eduardo apareceu
+1. Eduardo: Obsidian Git faz push automático em até 10 min
+2. Wilson verifica no vault se a nota do Eduardo apareceu em `Claude 1/Sessões/Eduardo/`
 
 ---
 
@@ -351,18 +297,6 @@ Não deve retornar erro.
 |---|---|---|
 | Vault path | `C:/Users/ynwwi/Projects/claude-novo/stark/Stark` | `C:/Users/eduar/Foryou-Brain` |
 | Author | `Wilson` | `Eduardo` |
-| Node path | `C:/Program Files/nodejs/node.exe` | confirmar com `where node` |
-| API Key Obsidian | própria | própria (passo 1.3) |
-
-Tudo mais é idêntico.
-
----
-
-## QUANDO INSTALAR CODEX E ANTIGRAVITY
-
-Os watchers já estão configurados no pm2. Quando Eduardo instalar:
-
-- **Codex:** sessões em `C:/Users/eduar/.codex/sessions` — watcher detecta automaticamente
-- **Antigravity:** brain em `C:/Users/eduar/.gemini/antigravity/brain` — watcher detecta automaticamente
-
-Nenhuma configuração adicional necessária.
+| Node path | `C:/Program Files/nodejs/node.exe` | `C:/Program Files/nodejs/node.exe` |
+| API Key Obsidian | própria | `7b03eb07...` (já obtida) |
+| MCP Tools | próprio exe | `C:\Users\eduar\Foryou-Brain\.obsidian\plugins\mcp-tools\bin\mcp-server.exe` |
