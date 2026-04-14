@@ -215,7 +215,7 @@ Write-Host "Exclusões adicionadas"
 
 ---
 
-## ⚠️ ETAPA 6 — Teste final — PENDENTE
+## ✅ ETAPA 6 — Teste final — CONCLUÍDA
 
 ```powershell
 # Abrir Claude e testar
@@ -231,6 +231,13 @@ ls "C:\Users\eduar\Foryou-Brain\Claude 1\Sessões\Eduardo\"
 ```
 
 Deve aparecer um arquivo `.md`. Se aparecer → tudo funcionando.
+
+---
+
+## ✅ SETUP COMPLETO — 2026-04-14
+
+Sessões salvando corretamente em `Claude Nova/Sessões/Eduardo/` e `Claude 1/Sessões/Eduardo/`.
+MCP Tools gerencia conexão com Obsidian automaticamente — aviso de "Local REST API" é ruído, não erro.
 
 ---
 
