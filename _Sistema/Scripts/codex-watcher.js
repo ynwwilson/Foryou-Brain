@@ -212,7 +212,8 @@ function buildCodexNote(filePath, cfg) {
 // ── Save session note ─────────────────────────────────────────────────────────
 
 function saveCodexSession(filePath, cfg) {
-  const sessionsDir = path.join(cfg.vaultPath, 'Codex', 'Sessões');
+  const author = cfg.author || 'Wilson';
+  const sessionsDir = path.join(cfg.vaultPath, 'Codex', 'Sessões', author);
   fs.mkdirSync(sessionsDir, { recursive: true });
   fs.mkdirSync(CACHE_DIR, { recursive: true });
 
@@ -312,7 +313,7 @@ function main() {
 
   // Ensure dirs
   fs.mkdirSync(CACHE_DIR, { recursive: true });
-  fs.mkdirSync(path.join(cfg.vaultPath, 'Codex', 'Sessões'), { recursive: true });
+  fs.mkdirSync(path.join(cfg.vaultPath, 'Codex', 'Sessões', cfg.author || 'Wilson'), { recursive: true });
 
   // Catch-up on startup
   try { catchUpScan(cfg); } catch (err) { logError('catchup', err.message); }

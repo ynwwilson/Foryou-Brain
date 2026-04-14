@@ -203,7 +203,8 @@ function buildIncompleteNote(taskId, brainDir, cfg) {
 // ── Save session note ─────────────────────────────────────────────────────────
 
 function saveAntигравitySession(taskId, brainDir, cfg) {
-  const sessionsDir = path.join(cfg.vaultPath, 'Antigravity', 'Sessões');
+  const author = cfg.author || 'Wilson';
+  const sessionsDir = path.join(cfg.vaultPath, 'Antigravity', 'Sessões', author);
   fs.mkdirSync(sessionsDir, { recursive: true });
   fs.mkdirSync(CACHE_DIR, { recursive: true });
 
@@ -320,7 +321,7 @@ function main() {
   const cfg = loadConfig();
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
-  fs.mkdirSync(path.join(cfg.vaultPath, 'Antigravity', 'Sessões'), { recursive: true });
+  fs.mkdirSync(path.join(cfg.vaultPath, 'Antigravity', 'Sessões', cfg.author || 'Wilson'), { recursive: true });
 
   const brainBase = cfg.antigravityBrainPath;
   if (!fs.existsSync(brainBase)) {

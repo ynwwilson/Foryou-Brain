@@ -223,10 +223,13 @@ function buildPairs(transcriptPath, cfg) {
 
 // ── Build note content ────────────────────────────────────────────────────────
 
-function buildNoteContent(sessionId, transcriptPath, cwd, cfg, accountKey, sessionTitle, sessionDatetime, startTs) {
-  const { pairs, firstUserMsg } = buildPairs(transcriptPath, cfg);
-  const toolName = cfg.tools[accountKey]?.name || 'Claude';
-  const maxEx    = cfg.maxExchanges || 6;
+function buildNoteContent(sessionId, transcriptPath, cwd, cfg, accountKey, sessionTitle, sessionDatetime, startTs, full = false) {
+  const effectiveCfg = full
+    ? { ...cfg, maxTextLength: 99999, maxExchanges: 99999 }
+    : cfg;
+  const { pairs, firstUserMsg } = buildPairs(transcriptPath, effectiveCfg);
+  const toolName = effectiveCfg.tools[accountKey]?.name || 'Claude';
+  const maxEx    = effectiveCfg.maxExchanges || 6;
   const recent   = pairs.slice(-(maxEx));
   const nowStr   = formatTimestamp(new Date());
 
@@ -237,7 +240,7 @@ function buildNoteContent(sessionId, transcriptPath, cwd, cfg, accountKey, sessi
     `tool: ${accountKey}`,
     `title: "${sessionTitle.replace(/"/g, "'")}"`,
     `session_id: ${sessionId}`,
-    `tags: [${accountKey}, sessão]`,
+    `tags: [${accountKey}, sessão${full ? ', completo' : ''}]`,
     '---'
   ].join('\n');
 
@@ -275,7 +278,8 @@ function buildNoteContent(sessionId, transcriptPath, cwd, cfg, accountKey, sessi
 
 function ensureSessionsDir(cfg, accountKey) {
   const folder     = cfg.tools[accountKey]?.folder || 'Claude 1';
-  const sessionsDir = path.join(cfg.vaultPath, folder, 'Sessões');
+  const author     = cfg.author || 'Wilson';
+  const sessionsDir = path.join(cfg.vaultPath, folder, 'Sessões', author);
   fs.mkdirSync(sessionsDir, { recursive: true });
   return sessionsDir;
 }
@@ -379,9 +383,16 @@ function main() {
 
       atomicWrite(notePath, content);
 
+      // Nota completa (sem limites) em _completo/
+      const completoDir = path.join(sessionsDir, '_completo');
+      fs.mkdirSync(completoDir, { recursive: true });
+      const completoPath = path.join(completoDir, path.basename(notePath));
+      const fullContent = buildNoteContent(sessionId, transcriptPath, cwd, cfg, accountKey, title, sessionDatetime, startTs, true);
+      atomicWrite(completoPath, fullContent);
+
       // Atualizar cache com byte position atual
       const stat = fs.statSync(transcriptPath);
-      writeCache(sessionId, { bytePos: stat.size, notePath, title });
+      writeCache(sessionId, { bytePos: stat.size, notePath, fullNotePath: completoPath, title });
 
       // Verificar heartbeat dos watchers
       checkHeartbeats(cfg);
