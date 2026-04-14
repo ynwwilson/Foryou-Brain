@@ -14,7 +14,8 @@ atualizado: 2026-04-10
 - [ ] Lançamento comercial ForYou Code — foco total em vendas
 - [ ] Prospecção via freelance radar (Workana, 99Freelas, GetNinjas, Upwork, LinkedIn, Trampos, Behance)
 - [ ] Formulário de escopo gratuito no ar — leads entrando pelo funil
-- [ ] Semana 1: apenas Funil 1 (IA de atendimento) — sem ecossistema ainda
+- [ ] Semana 1: qualquer automação que faça sentido nas plataformas de freela — IA de atendimento, sistemas, integrações, apps
+- [ ] Semana 2+: ecossistema completo entra no pitch ativamente
 - [ ] Semana 4: Meta Ads vai ao ar (não antes)
 - [ ] Setup vault compartilhado (Eduardo + Marco) — em andamento
 
@@ -22,8 +23,9 @@ atualizado: 2026-04-10
 
 ## Foco comercial atual
 
-- **Produto foco semana 1-2:** IA de atendimento (ticket R$3.000–R$6.000)
-- **Produto foco semana 3+:** Ecossistema digital (ticket R$15.000–R$30.000)
+- **Semana 1 — freelance platforms:** qualquer automação que faça sentido (IA de atendimento, sistemas, integrações, apps) — não limitado a um produto só
+- **Semana 2+:** ecossistema completo já entra na conversa — prospecção, pitches e propostas abertas
+- **Produto foco principal:** IA de atendimento (ticket R$3.000–R$5.000) + Ecossistema (ticket R$30.000–R$60.000)
 - **Lead magnet:** ForYou Life (app gratuito) + escopo gratuito via Meta Ads
 - **Canal principal:** freelance platforms + Meta Ads (semana 4)
 - Ver plano completo: [[knowledge/Plano Comercial ForYou Code 2026]]

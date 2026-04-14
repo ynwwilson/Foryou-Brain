@@ -470,7 +470,7 @@ Claude monitora as plataformas diariamente. Quando aparece projeto que bate com 
 | Instagram / redes | Perfil público linkado ou mencionado |
 | Localização | Cidade/estado se disponível |
 | Site | Se disponível no perfil |
-| Análise de fit | Produto indicado (IA de atendimento ou ecossistema), complexidade estimada, nível de urgência do lead |
+| Análise de fit | Produto indicado (qualquer automação que faça sentido: IA de atendimento, sistema, integração, app, ecossistema), complexidade estimada, nível de urgência do lead |
 | Ação sugerida | O que responder e quem deve entrar em contato |
 
 Objetivo: quando Eduardo abrir o alerta, já ter tudo na tela — sem precisar pesquisar nada manualmente.
