@@ -22,7 +22,7 @@ Node v24.14.1 · npm 11.11.0 · git 2.53.0 · pastas criadas.
 
 ---
 
-## ⚠️ ETAPA 3 — Session Saver + Hooks + Claude Code + pm2 — EM ANDAMENTO
+## ✅ ETAPA 3 — Session Saver + Hooks + Claude Code + pm2 — CONCLUÍDA
 
 Rodar cada bloco no PowerShell em sequência.
 
@@ -179,7 +179,7 @@ Resultado esperado: `codex-watcher` e `antigravity-watcher` com status `online`.
 
 ---
 
-## ETAPA 4 — Task Scheduler: pm2 no boot
+## ✅ ETAPA 4 — Task Scheduler: pm2 no boot — CONCLUÍDA
 
 Abrir PowerShell como **Administrador** e rodar tudo de uma vez:
 
@@ -199,7 +199,7 @@ Resultado esperado: `TaskName: PM2 Auto Start` com `State: Ready`.
 
 ---
 
-## ETAPA 5 — Windows Defender: exclusões
+## ✅ ETAPA 5 — Windows Defender: exclusões — CONCLUÍDA
 
 Abrir PowerShell como **Administrador**:
 
@@ -215,7 +215,7 @@ Write-Host "Exclusões adicionadas"
 
 ---
 
-## ETAPA 6 — Teste final
+## ⚠️ ETAPA 6 — Teste final — PENDENTE
 
 ```powershell
 # Abrir Claude e testar
