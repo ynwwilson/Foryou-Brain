@@ -1,0 +1,9 @@
+{
+  "name": "session-saver-hooks",
+  "version": "1.0.0",
+  "description": "Claude Code hooks + session watchers",
+  "main": "session-saver.js",
+  "dependencies": {
+    "chokidar": "^3.6.0"
+  }
+}
