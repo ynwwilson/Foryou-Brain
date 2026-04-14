@@ -1,0 +1,16 @@
+{
+  "vaultPath": "C:/Users/ynwwi/Projects/claude-novo/stark/Stark",
+  "tools": {
+    "claude1": { "folder": "Claude 1", "name": "Claude" },
+    "claude-nova": { "folder": "Claude Nova", "name": "Claude Nova" },
+    "codex": { "folder": "Codex", "name": "Codex" },
+    "antigravity": { "folder": "Antigravity", "name": "Antigravity" }
+  },
+  "codexSessionsPath": "C:/Users/ynwwi/.codex/sessions",
+  "antigravityBrainPath": "C:/Users/ynwwi/.gemini/antigravity/brain",
+  "heartbeatMaxAge": 120000,
+  "maxTextLength": 800,
+  "maxExchanges": 15,
+  "catchUpDays": 7,
+  "nodePath": "C:/Program Files/nodejs/node.exe"
+}
