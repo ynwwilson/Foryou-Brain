@@ -1,0 +1,42 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Program Files/nodejs/node.exe\" C:/Users/eduar/.claude/hooks/session-saver.js"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Program Files/nodejs/node.exe\" C:/Users/eduar/.claude/hooks/session-saver.js"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": ["Bash(*)"]
+  },
+  "mcpServers": {
+    "obsidian": {
+      "command": "C:\\Users\\eduar\\Foryou-Brain\\.obsidian\\plugins\\mcp-tools\\bin\\mcp-server.exe",
+      "args": [],
+      "env": {
+        "OBSIDIAN_API_KEY": "7b03eb071579b195785f1802576b81ffefd389b5845a21b463c3aa12fa4e8bb3"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\Users\\eduar\\Foryou-Brain"]
+    }
+  }
+}
