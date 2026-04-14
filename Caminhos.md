@@ -6,14 +6,14 @@ tags: [caminhos, projetos, referência]
 
 ## Projetos de código
 
-| Projeto | Caminho completo |
-|---|---|
-| concretize-ia-webhook | `C:/Users/ynwwi/Projects/concretize-ia-webhook` |
+| Projeto                | Caminho completo                                 |
+| ---------------------- | ------------------------------------------------ |
+| concretize-ia-webhook  | `C:/Users/ynwwi/Projects/concretize-ia-webhook`  |
 | concretize-insight-hub | `C:/Users/ynwwi/Projects/concretize-insight-hub` |
-| totus-ai-concierge | `C:/Users/ynwwi/Projects/totus-ai-concierge` |
-| whatsapp-context | `C:/Users/ynwwi/Projects/whatsapp-context` |
-| jarvis-archive | `C:/Users/ynwwi/Projects/jarvis-archive` |
-| stark-scripts | `C:/Users/ynwwi/Projects/stark-scripts` |
+| totus-ai-concierge     | `C:/Users/ynwwi/Projects/totus-ai-concierge`     |
+| whatsapp-context       | `C:/Users/ynwwi/Projects/whatsapp-context`       |
+| jarvis-archive         | `C:/Users/ynwwi/Projects/jarvis-archive`         |
+| stark-scripts          | `C:/Users/ynwwi/Projects/stark-scripts`          |
 
 ## Vault Obsidian
 
