@@ -1,5 +1,55 @@
 # Status Atual - Concretize IA
 
+## Atualização real em 15/04/2026
+- Backend `concretize-ia-webhook` publicado e funcionando com `Gemini` como principal e `OpenAI` como fallback completo.
+- Frontend/painel `concretize-insight-hub` publicado com as áreas novas:
+  - `Catálogo Vivo`
+  - `Cérebro da IA`
+  - `Publicação`
+  - `Status`
+- Migration da nova estrutura do cérebro da IA aplicada manualmente no Supabase via SQL Editor.
+- Fluxos validados manualmente no painel publicado:
+  - salvar rascunho do cérebro
+  - publicar nova versão
+  - rollback
+  - salvar/sincronizar produto no catálogo vivo
+  - status operacional
+- Ajustes finos já corrigidos após os testes manuais:
+  - telas pretas nas rotas novas
+  - status operacional falso/degradado
+  - divergência de impacto entre cérebro e publicação
+  - erro ao publicar de novo depois de rollback
+
+## Estado real agora
+- A fase principal de arquitetura do painel da IA está pronta.
+- O cérebro configurável já está refletido no painel com nome, contexto, regras, tom, handoff, memória, guardrails, respostas diretas e catálogo/contexto por produto.
+- `PDF` continua pendente por decisão do usuário e deve permanecer como item a configurar.
+- O principal item ainda não validado é o teste real da IA em conversa, para confirmar o comportamento prático final.
+
+## Leitura correta para próximas sessões
+- Notas antigas que dizem que ainda faltava definir quase tudo do negócio estão desatualizadas.
+- A fase atual é de validação final em produção e refinamento fino, não de desenho principal da arquitetura.
+
+## Pendências corretas neste momento
+- Falta validar a IA em conversa real de produção.
+- Falta decidir a política final de PDF.
+
+## Itens que não devem mais aparecer como pendência principal
+- regras comerciais finais
+- guardrails finais
+- memória ideal do lead
+- tom e estilo final
+- cérebro/painel da IA
+- publicação/rollback
+- catálogo vivo
+
+Esses blocos já foram definidos ou implementados em grande parte e já estão refletidos no painel.
+
+## Itens antigos que podem existir como backlog técnico, mas não como foco central agora
+- `failed_messages`
+- SSH no VPS
+- UptimeRobot
+
 - IA não responde após conexão WhatsApp (problema principal)
 - Token Chatwoot inválido
 - webhook.ts sem resiliência

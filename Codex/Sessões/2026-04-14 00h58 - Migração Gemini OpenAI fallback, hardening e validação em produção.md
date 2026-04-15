@@ -391,3 +391,85 @@ Conclusão:
 
 ## Próximo passo recomendado
 Quando o usuário entregar a parte de negócio, entrar na fase final de calibração comportamental + teste prático controlado.
+
+## Atualização 2026-04-15 — Painel mestre da IA, catálogo vivo e publicação real
+
+### O que foi feito depois desta sessão
+Foi implementada a central real da IA no painel `concretize-insight-hub`, mantendo os módulos operacionais existentes e adicionando:
+- `Catálogo Vivo`
+- `Cérebro da IA`
+- `Publicação`
+- `Status`
+
+Também foi implementado no backend `concretize-ia-webhook`:
+- cérebro configurável com rascunho, publicação, histórico e rollback
+- priorização do cérebro publicado sobre o legado
+- catálogo vivo com sincronização real
+- fallbacks de compatibilidade para não quebrar a produção durante a migração
+
+### O que foi definido de negócio e já foi refletido no painel
+A camada principal de negócio deixou de estar apenas no código e foi refletida no painel já preenchida com o estado atual da IA:
+- nome, identidade e papel da IA
+- tom e estilo
+- regras comerciais
+- objeção de preço
+- qualificação
+- handoff humano
+- casos sensíveis
+- inferência por imagem
+- memória do lead
+- links e mídia
+- guardrails
+- respostas diretas
+- catálogo vivo e contexto por produto
+
+### O que foi validado manualmente em produção
+Foi validado manualmente no painel publicado:
+- migration da estrutura nova aplicada no Supabase via SQL Editor
+- `Cérebro da IA` abre, salva rascunho e mantém o conteúdo
+- `Publicação` publica nova versão
+- rollback funciona e volta o conteúdo no cérebro
+- `Catálogo Vivo` salva e sincroniza produto
+- `Status` abre e reporta a saúde operacional
+
+### Erros reais encontrados nesta fase e correções aplicadas
+1. telas pretas em rotas novas do painel
+- corrigido em `Configurações`, `Catálogo Vivo`, `Cérebro da IA` e `Publicação`
+- em parte exigiu fallback de emergência no backend para não devolver 500 nas telas novas
+
+2. bloqueios de ambiente local
+- `supabase.exe` e `dev-browser` foram bloqueados por política WDAC/Device Guard
+- contorno usado: migration aplicada manualmente no Supabase e validação do painel feita manualmente no navegador
+
+3. `Status` mentindo ou parecendo degradado sem motivo real
+- corrigido para refletir prontidão real do webhook e da IA
+- backend passou a expor readiness de forma utilizável fora do modo debug
+
+4. divergência de impacto entre `Cérebro da IA` e `Publicação`
+- corrigido
+- impacto agora é baseado no diff real da mudança atual, não no texto inteiro já existente no cérebro
+
+5. popup do cérebro mostrava agrupamento genérico de mudanças
+- corrigido
+- agora mostra exatamente o que foi alterado
+
+6. erro ao publicar depois de rollback
+- causa raiz identificada: a tabela `ai_brain_versions` tem `unique (org_id, version_number)` e o backend tentava reutilizar um número de versão já existente após rollback
+- corrigido para sempre usar `maior versão existente + 1`
+
+### Estado real ao final desta continuação
+- backend e frontend da nova central da IA estão publicados
+- migration da nova estrutura está aplicada
+- cérebro/configuração já aparece no painel refletindo o estado atual da IA
+- rascunho, publicação, rollback, catálogo vivo e status já foram validados manualmente
+- PDF continua pendente por decisão explícita do usuário e aparece como item a configurar
+
+### O que ainda falta para chamar de 100%
+- teste real final da IA em conversa de produção, para confirmar comportamento prático com as regras e o catálogo novos
+- política final de PDF, quando o usuário decidir
+
+### Onde o Claude deve continuar
+O Claude deve partir do pressuposto de que:
+- a central da IA no painel já existe e está funcional
+- as notas antigas que diziam que faltava definir quase tudo do negócio estão desatualizadas
+- a fase atual não é mais de arquitetura principal, e sim de validação final em uso real e refinamento fino

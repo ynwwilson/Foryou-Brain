@@ -1,10 +1,18 @@
 ---
-title: "IA de Atendimento Rodrigo"
+title: IA de Atendimento Rodrigo
 type: projeto
-created: 2026-03-26
-updated: 2026-04-08
-tags: [projeto, cliente, ia-atendimento, crm, whatsapp, chatwoot, megaapi, vendedor-3.0]
-status: pendente-diagnóstico-mídia
+created: 2026-03-26T00:00:00.000Z
+updated: '2026-04-15T00:00:00.000Z'
+tags:
+  - projeto
+  - cliente
+  - ia-atendimento
+  - crm
+  - whatsapp
+  - chatwoot
+  - megaapi
+  - vendedor-3.0
+status: quase-pronto-validacao-final
 ---
 
 # IA de Atendimento — Rodrigo (Concretize Pré Moldados)
@@ -17,6 +25,56 @@ IA de atendimento via WhatsApp com CRM integrado. Automação de atendimento qua
 - Empresa: Concretize Pré Moldados
 
 ---
+
+## Status Técnico (15/04/2026) — estado atual real
+
+| Item | Status | Detalhe |
+|---|---|---|
+| **Backend** | ✅ Online | https://concretize-ia.vercel.app — cérebro configurável, publicação e catálogo vivo ativos |
+| **WhatsApp** | ✅ Conectado | Instância operacional e status ajustado para refletir prontidão real |
+| **Supabase** | ✅ Atualizado | migration do cérebro da IA e catálogo vivo aplicada manualmente |
+| **Frontend** | ✅ Online | https://concretize-insight-hub.vercel.app com `Catálogo Vivo`, `Cérebro da IA`, `Publicação` e `Status` |
+| **Cérebro da IA** | ✅ Validado manualmente | rascunho, publicação e rollback funcionando |
+| **Catálogo Vivo** | ✅ Validado manualmente | salvar e sincronizar produto funcionando |
+| **Status operacional** | ✅ Corrigido | deixou de reportar degradação falsa |
+| **Impacto de publicação** | ✅ Corrigido | agora usa diff real da mudança atual |
+| **PDF** | 🟡 Pendente por decisão | continua como item a configurar no painel |
+| **Teste real em conversa** | 🟡 Falta validar | último passo relevante para chamar de 100% |
+
+## Onde paramos de verdade
+- A arquitetura principal do painel da IA já está pronta e publicada.
+- Quase tudo que foi definido sobre contexto, nome, regras, tom, guardrails, memória, handoff, imagem, links e catálogo já foi refletido no painel.
+- As notas antigas que diziam que ainda faltava definir quase tudo do negócio ficaram desatualizadas.
+- O que falta agora não é mais desenhar a estrutura principal; é validar a IA em conversa real e decidir a política final de PDF.
+
+## Erros importantes encontrados nesta fase e já resolvidos
+- telas pretas nas rotas novas do painel
+- status operacional mostrando degradação falsa
+- divergência de impacto entre `Cérebro da IA` e `Publicação`
+- erro ao publicar depois de rollback por repetição de `version_number`
+
+## Como o Claude deve interpretar este projeto agora
+- tratar o `concretize-insight-hub` como painel mestre real da IA da Concretize
+- considerar que o cérebro configurável já existe e está funcional
+- não voltar a tratar a parte principal de negócio como pendência ampla
+- focar em validação final, refinamento fino e teste real da IA
+
+## Pendências atuais reais (15/04/2026)
+### O que ainda falta de verdade
+- teste real final da IA em conversa de produção
+- política final de PDF
+
+### O que NÃO deve mais ser tratado como pendência principal
+- calibração ampla de prompt/cérebro: já foi feita em grande parte e já está refletida no painel
+- regras comerciais, guardrails, memória do lead, tom e boa parte do comportamento: já foram definidos e migrados para a central da IA
+- criação da estrutura principal do cérebro/publicação/catálogo vivo: já foi implementada e validada manualmente
+
+### Pendências técnicas antigas que podem existir como backlog, mas não como bloqueio central desta fase
+- tabela `failed_messages` no Supabase
+- SSH com chave no VPS Hostinger
+- UptimeRobot monitorando `/api/status`
+
+Esses itens podem ser úteis depois, mas não são a leitura correta do ponto atual do projeto.
 
 ## Status Técnico (13/04/2026)
 
