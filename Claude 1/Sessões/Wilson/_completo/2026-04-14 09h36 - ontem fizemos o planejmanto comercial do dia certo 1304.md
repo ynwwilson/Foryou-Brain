@@ -4,7 +4,7 @@ fim: 2026-04-15 00:25:23
 tool: claude1
 title: "ontem fizemos o planejmanto comercial do dia certo 1304"
 session_id: 114b6a9c-4636-4865-b9d3-18a353a6bb67
-tags: [claude1, sessão]
+tags: [claude1, sessão, completo]
 ---
 
 # ontem fizemos o planejmanto comercial do dia certo 1304
@@ -48,7 +48,7 @@ sim cace, plano comercial dia 13/04 no obsidian que você vai…
 **Mestre:** só isso mesmo, me de um resumo de como está pra cada agora
 > 10:15
 
-**Claude:** **JOSÉ** - Meta Ads: estruturar Business Manager, página Facebook, vincular Instagram e perfis dos sócios, conta de anúncios, Pixel — sem rodar campanha ainda - Site: one-pager no ar com formulário de 10 campos, promessa de "prévia em 48h", deploy no Vercel - Gravar os 3 demos (Rodrigo, Dayane, ForYou Code interno) **MARCO** - Warm DMs pra quem engajou nos perfis nos últimos 7 dias e bate com ICP - LinkedIn: monitorar projetos publicados nas buscas salvas - Gravar variações dos demos — ângulos diferentes do painel do Rodrigo e do app da Dayane **EDUARDO** - Pesquisa manual no Instagram: 30 prospects que batem com ICP, tabela preenchida entregue pro José antes das 18h - Editar os 3 demos após a gravação (básico, sem perfeccionismo) **Bloqueado por enquanto:** plataformas de freela aguardand…
+**Claude:** **JOSÉ** - Meta Ads: estruturar Business Manager, página Facebook, vincular Instagram e perfis dos sócios, conta de anúncios, Pixel — sem rodar campanha ainda - Site: one-pager no ar com formulário de 10 campos, promessa de "prévia em 48h", deploy no Vercel - Gravar os 3 demos (Rodrigo, Dayane, ForYou Code interno) **MARCO** - Warm DMs pra quem engajou nos perfis nos últimos 7 dias e bate com ICP - LinkedIn: monitorar projetos publicados nas buscas salvas - Gravar variações dos demos — ângulos diferentes do painel do Rodrigo e do app da Dayane **EDUARDO** - Pesquisa manual no Instagram: 30 prospects que batem com ICP, tabela preenchida entregue pro José antes das 18h - Editar os 3 demos após a gravação (básico, sem perfeccionismo) **Bloqueado por enquanto:** plataformas de freela aguardando aprovação — assim que liberar, atualizar com o link do site e ativar o monitoramento de projetos.
 > 10:15
 
 ---
