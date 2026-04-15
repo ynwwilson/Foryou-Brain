@@ -468,8 +468,15 @@ Foi validado manualmente no painel publicado:
 - teste real final da IA em conversa de produção, para confirmar comportamento prático com as regras e o catálogo novos
 - política final de PDF, quando o usuário decidir
 
+### Itens técnicos adicionais já fechados depois dessa continuação
+- tabela `failed_messages` criada manualmente no Supabase SQL Editor
+- SSH com chave no VPS Hostinger funcionando por `ssh -i ~/.ssh/hostinger_ed25519 root@76.13.166.51`
+- monitor HTTP do UptimeRobot criado para `https://concretize-ia.vercel.app/api/status`
+- revisão automática final do backend concluída com `84/84` testes passando e `npm run build` ok
+
 ### Onde o Claude deve continuar
 O Claude deve partir do pressuposto de que:
 - a central da IA no painel já existe e está funcional
 - as notas antigas que diziam que faltava definir quase tudo do negócio estão desatualizadas
+- `failed_messages`, SSH por chave e UptimeRobot já foram resolvidos
 - a fase atual não é mais de arquitetura principal, e sim de validação final em uso real e refinamento fino

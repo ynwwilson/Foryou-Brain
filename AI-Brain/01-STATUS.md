@@ -34,6 +34,18 @@
 - Falta validar a IA em conversa real de produção.
 - Falta decidir a política final de PDF.
 
+## Correção aplicada em 15/04/2026 (tarde) — Cérebro em modo emergência
+**Problema encontrado:** painel reportava "Cérebro da IA operando em modo de emergência".
+**Causa raiz:** dados corrompidos no Supabase — ambas as versões do cérebro (`ai_brain_versions`) estavam com `is_current: false`. Isso aconteceu porque o teste manual de rollback foi feito antes do commit `84a65e1` (fix: version brain publishes after rollback) ser deployado. O code fix estava correto, mas não corrigiu os dados antigos.
+**Fix aplicado:** PATCH direto via Supabase REST API setando `is_current: true` na versão 2 (config_json completo com identidade, regras, guardrails, tom, memória, handoff, etc.).
+**Estado após fix:** cérebro carregado normalmente do banco, emergência resolvida. Webhook já usava o conteúdo correto via fallback — apenas o painel reportava estado incorreto.
+
+## Itens técnicos fechados nesta fase
+- tabela `failed_messages` criada manualmente no Supabase
+- SSH por chave no VPS Hostinger funcionando
+- monitor HTTP do UptimeRobot criado para `/api/status`
+- revisão automática final de backend/observabilidade concluída sem pendência crítica
+
 ## Itens que não devem mais aparecer como pendência principal
 - regras comerciais finais
 - guardrails finais
@@ -45,10 +57,10 @@
 
 Esses blocos já foram definidos ou implementados em grande parte e já estão refletidos no painel.
 
-## Itens antigos que podem existir como backlog técnico, mas não como foco central agora
-- `failed_messages`
-- SSH no VPS
-- UptimeRobot
+## Itens antigos que não devem mais aparecer como backlog pendente desta fase
+- `failed_messages` — resolvido
+- SSH no VPS — resolvido
+- UptimeRobot — resolvido
 
 - IA não responde após conexão WhatsApp (problema principal)
 - Token Chatwoot inválido

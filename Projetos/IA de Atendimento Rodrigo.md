@@ -38,6 +38,8 @@ IA de atendimento via WhatsApp com CRM integrado. Automação de atendimento qua
 | **Catálogo Vivo** | ✅ Validado manualmente | salvar e sincronizar produto funcionando |
 | **Status operacional** | ✅ Corrigido | deixou de reportar degradação falsa |
 | **Impacto de publicação** | ✅ Corrigido | agora usa diff real da mudança atual |
+| **Observabilidade básica** | ✅ Fechada | `failed_messages` criada no Supabase, monitor UptimeRobot configurado e status básico operacional |
+| **SSH no VPS** | ✅ Fechado | acesso por chave funcionando no Hostinger (`ssh -i ~/.ssh/hostinger_ed25519 root@76.13.166.51`) |
 | **PDF** | 🟡 Pendente por decisão | continua como item a configurar no painel |
 | **Teste real em conversa** | 🟡 Falta validar | último passo relevante para chamar de 100% |
 
@@ -52,6 +54,7 @@ IA de atendimento via WhatsApp com CRM integrado. Automação de atendimento qua
 - status operacional mostrando degradação falsa
 - divergência de impacto entre `Cérebro da IA` e `Publicação`
 - erro ao publicar depois de rollback por repetição de `version_number`
+- cérebro em modo emergência: ambas as versões em `ai_brain_versions` tinham `is_current: false` (teste de rollback feito antes do code fix ser deployado) — corrigido via PATCH no Supabase em 15/04
 
 ## Como o Claude deve interpretar este projeto agora
 - tratar o `concretize-insight-hub` como painel mestre real da IA da Concretize
@@ -64,17 +67,22 @@ IA de atendimento via WhatsApp com CRM integrado. Automação de atendimento qua
 - teste real final da IA em conversa de produção
 - política final de PDF
 
+### Itens técnicos já fechados nesta fase
+- tabela `failed_messages` criada manualmente no Supabase SQL Editor
+- SSH com chave no VPS Hostinger funcionando
+- monitor HTTP do UptimeRobot criado/configurado para `https://concretize-ia.vercel.app/api/status`
+
 ### O que NÃO deve mais ser tratado como pendência principal
 - calibração ampla de prompt/cérebro: já foi feita em grande parte e já está refletida no painel
 - regras comerciais, guardrails, memória do lead, tom e boa parte do comportamento: já foram definidos e migrados para a central da IA
 - criação da estrutura principal do cérebro/publicação/catálogo vivo: já foi implementada e validada manualmente
 
-### Pendências técnicas antigas que podem existir como backlog, mas não como bloqueio central desta fase
+### Pendências técnicas antigas que já foram resolvidas nesta fase
 - tabela `failed_messages` no Supabase
 - SSH com chave no VPS Hostinger
 - UptimeRobot monitorando `/api/status`
 
-Esses itens podem ser úteis depois, mas não são a leitura correta do ponto atual do projeto.
+Esses itens não devem mais aparecer como pendência ativa do projeto.
 
 ## Status Técnico (13/04/2026)
 
