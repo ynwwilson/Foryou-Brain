@@ -57,6 +57,40 @@
 
 Esses blocos já foram definidos ou implementados em grande parte e já estão refletidos no painel.
 
+## Atualização real em 16/04/2026 — correção de identidade de contato e automação por contato
+- A sessão de 16/04 mostrou que a validação anterior estava otimista demais: testes e build passavam, mas o fluxo real ainda misturava identidade de contatos.
+- Incidente real observado em produção:
+  - lead mandava áudio
+  - resposta podia sair no número errado
+  - painel podia mostrar nome errado para o mesmo telefone
+  - houve sinais de contaminação entre nome, contato e histórico
+- Causa raiz principal identificada no webhook:
+  - o parser aceitava `jid` do topo cedo demais
+  - na MegaAPI o número real do lead pode vir em `key.remoteJid`
+- Correções publicadas em produção:
+  - `054a4ee` — parser do webhook passa a priorizar `key.remoteJid`
+  - `ccf7e16` — nome do contato é atualizado no backend/Chatwoot e `agent_name` deixa de contaminar o cliente no envio manual
+- Nova feature publicada:
+  - pausa de automação por contato
+  - toggle individual
+  - seleção em massa no Inbox
+  - coluna `automation_disabled` criada em produção no Supabase
+  - backend respeita a pausa antes de responder
+- Commits relevantes desta fase:
+  - backend `0ece857` — pausa de automação por contato
+  - backend `054a4ee` — prioriza `remoteJid` do lead no webhook
+  - backend `ccf7e16` — corrige contaminação de nome do contato
+  - frontend `44384f2` — seleção em massa para pausa de automação
+- Verificação desta fase:
+  - backend `94/94` testes passando
+  - backend build limpo
+  - frontend build limpo
+  - migration executada manualmente no Supabase com sucesso
+- Leitura correta do estado atual:
+  - infraestrutura principal continua saudável
+  - ainda falta validar de novo em produção real se o isolamento entre contatos ficou definitivamente correto
+  - se ainda falhar, o próximo suspeito é o pareamento texto/mídia por lote
+
 ## Itens antigos que não devem mais aparecer como backlog pendente desta fase
 - `failed_messages` — resolvido
 - SSH no VPS — resolvido

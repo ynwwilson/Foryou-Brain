@@ -397,6 +397,49 @@ O usuário vai retornar com material refinado para completar a especificação o
 
 ---
 
+## 16/04/2026 — Incidente real em produção: roteamento, nomes e isolamento entre contatos
+
+### O que deu errado de verdade
+- O sistema foi tratado como \"100%\" cedo demais com base em testes de source/build, sem validação suficiente do fluxo real MegaAPI -> webhook -> Supabase -> Chatwoot -> WhatsApp.
+- O parser do webhook aceitava `jid` do topo cedo demais; na MegaAPI o número real do lead pode vir em `key.remoteJid`. Isso fazia inbound colapsar para o número da própria instância/contato errado.
+- Houve contaminação de nome do contato: o mesmo telefone podia ficar com nome antigo/incorreto no backend e no Chatwoot.
+- O endpoint manual de envio (`api/send.ts`) usava `agent_name` como se fosse nome do cliente, o que contaminava memória e nome do contato.
+- O painel e o WhatsApp mostraram sintomas diferentes do mesmo problema estrutural: identidade do lead (telefone + nome) não estava suficientemente blindada no pipeline.
+- Em uso real apareceram sinais de mistura entre contatos e histórico, então a validação final anterior deve ser considerada insuficiente.
+
+### O que foi corrigido nesta sessão
+- Parser do webhook corrigido para priorizar `key.remoteJid` / `messageData.key.remoteJid` antes do `jid` do topo.
+- Parser mantido por envelope coerente para não misturar `message`, `key` e `jid` de objetos diferentes.
+- `contact_name` agora é atualizado quando chega um nome real novo para o mesmo telefone.
+- Chatwoot agora também atualiza o nome do contato encontrado pelo mesmo telefone quando o nome real muda.
+- `api/send.ts` deixou de usar `agent_name` como nome do cliente; agora usa o `contact_name` real da conversa.
+- Feature nova entregue: pausa de automação por contato, com toggle individual e seleção em massa no painel.
+- Migration do Supabase aplicada em produção: `automation_disabled` em `conversations` + índice por `contact_phone`.
+
+### O que foi validado nesta sessão
+- Backend: testes passaram `94/94` e `npm run build` limpo após os fixes finais.
+- Frontend da pausa de automação: teste-source passou e build passou.
+- Migration do Supabase executada manualmente no dashboard logado do Opera com retorno `Success. No rows returned`.
+- Commits publicados:
+  - `0ece857` — pausa de automação por contato
+  - `054a4ee` — prioriza `remoteJid` do lead no webhook
+  - `ccf7e16` — corrige contaminação de nome do contato
+- Frontend publicado com seleção em massa / toggle de automação:
+  - `44384f2`
+
+### O que ainda NÃO pode ser tratado como 100% provado
+- Ainda precisa de reteste real em produção com pelo menos:
+  - 1 áudio do Eduardo
+  - 1 áudio do Marco
+  - 1 contato pessoal do próprio Rodrigo/José
+- Se ainda houver erro após esses fixes, o próximo suspeito principal é o pareamento texto/mídia por lote no Redis/webhook.
+- A qualidade semântica das respostas de áudio ainda pode precisar refinamento fino mesmo com o roteamento corrigido.
+
+### Leitura correta do estado atual após 16/04/2026
+- O sistema está mais correto do que estava antes, mas não deve ser chamado de \"100%\" sem a nova rodada de teste real.
+- Os maiores erros desta fase foram de identidade do contato, não de infraestrutura principal.
+- A próxima prioridade operacional é provar isolamento entre contatos em produção real.
+
 ## Relacionado
 - [[Rodrigo]]
 - [[ForYou Code]]
