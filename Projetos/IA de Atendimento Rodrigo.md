@@ -2,7 +2,7 @@
 title: IA de Atendimento Rodrigo
 type: projeto
 created: 2026-03-26T00:00:00.000Z
-updated: '2026-04-15T00:00:00.000Z'
+updated: '2026-04-18T00:00:00.000Z'
 tags:
   - projeto
   - cliente
@@ -439,6 +439,72 @@ O usuário vai retornar com material refinado para completar a especificação o
 - O sistema está mais correto do que estava antes, mas não deve ser chamado de \"100%\" sem a nova rodada de teste real.
 - Os maiores erros desta fase foram de identidade do contato, não de infraestrutura principal.
 - A próxima prioridade operacional é provar isolamento entre contatos em produção real.
+
+## 17–18/04/2026 — Anti-invenção de produto, fluidez e handoff restrito
+
+### Problema que motivou a sessão
+Nos prints reais de conversa, a IA insistia em oferecer "Cobogó Éter" mesmo quando o cliente só tinha falado em "cobogó" genérico — produto que **não existe no catálogo**. Pior: se o cliente mudava de assunto, a IA teimava; se mencionava produto inexistente, a IA confirmava com "vou verificar". Handoff também estava largo demais (passava pro Rodrigo em qualquer dúvida).
+
+### Causa raiz identificada
+- O catálogo real do Supabase **nunca era injetado no prompt**. A função `getProducts()` existia mas não era chamada no caminho de produção; o brain só tinha "Cobogós" genérico no `identity`, sem nomes exatos. A IA inventava pra preencher a lacuna.
+- `lib/brainConfig.ts` tinha literais "Eter do Muno" em 2 pontos (linhas 1393 e 1442) ancorando o modelo na hallucination.
+- Pré-marker polluído no `ai_brain_versions` carregava regras antigas de versões anteriores do patch.
+- A regra anti-invenção existia mas era específica pra Éter — não generalizava pra qualquer produto.
+- Não havia guardrail determinístico: se o modelo inventava, passava direto.
+
+### O que foi implementado
+
+**Pipeline de catálogo**
+- `lib/supabase.ts`: novo `getCatalogSnapshot()` retornando prompt rico (nome, dimensões, aplicações, argumentos, brain_context) agrupado por categoria, cache de 60s.
+- `lib/aiRouter.ts`: catálogo injetado em **todo** request de IA.
+
+**Validador determinístico (novo arquivo)**
+- `lib/responseValidator.ts`: regex detecta menções a produtos, Levenshtein fuzzy match com tolerância de 1–2 chars (suporta transcrição tipo "Fenestraa" → "Fenestra").
+- `generateWithValidation()` roda em cada provider: se inventa, refaz 1x com alerta corretivo; loga `double_miss` se falha de novo.
+- `scanHistoryForInvalid()` varre assistente em turnos anteriores e injeta `[AVISO DE CONTEXTO]` quando detecta invenção passada — quebra ciclo de auto-reforço.
+- `tests/response-validator.test.js`: 8 testes, todos verdes.
+
+**Regras do brain (v10 publicada)**
+- Literais "Eter do Muno" removidos de `lib/brainConfig.ts`.
+- `POSTURA PARA PRODUTO FORA DO CATÁLOGO` genérica: qualquer produto ausente vira "esse a gente não trabalha, temos X/Y/Z, quer ver?".
+- `REGRA DE FLUIDEZ DA CONVERSA`: segue última mensagem do lead, não insiste em assunto abandonado, volta quando o lead volta, espelha ritmo/tom/formato.
+- `handoff` com **LISTA FECHADA** — passa pro Rodrigo **só** em:
+  - desconto
+  - fechamento
+  - comprovante/pix/agendamento
+  - orçamento total com frete
+  - **NUNCA passa**: dúvida técnica, reclamação genérica, projeto grande sem sinal de fechamento, pedido de catálogo/foto/vídeo/link, cliente pedindo genericamente "falar com alguém", horário/localização.
+
+**Robustez do roteador**
+- `lib/ai.ts`: `isRetryableProviderError()` pula retry em 429/quota do Gemini — vai direto pro OpenAI fallback.
+- `lib/aiRouter.ts`: length cap por sinal — ≤8 palavras → 2 blocos; ≤20 → 4 blocos; else sem cap. Evita textão em resposta a mensagem curta.
+
+**Patch script**
+- `scripts/patch-brain-config.mjs`: `LEGACY_PATCH_HEADERS` stripa conteúdo pré-marker poluído; `HANDOFF_RULES` aplicado em main (`ai_brain_versions`) e fallback (`analytics_v2`).
+- Utilitários novos: `dump-brain-sections.mjs`, `dump-identity.mjs`, `dump-product-schema.mjs`, `hunt-eter.mjs` (confirmou que "Eter do Muno" nunca existiu no DB — era só hallucination do LLM), `verify-brain-config.mjs`.
+
+### Deploy
+- Commit `736613c` em main, push feito, Vercel auto-deploy.
+- Brain v10 já estava publicada no Supabase (org `ccf52483-3e36-4a1d-8e7a-b2d9e107a36d`), `is_current=true`, com marker `__PATCH_V2__` em guardrails, tone_style, sales_rules e handoff.
+
+### Validações
+- `rtk npm test` → 114/114 passando.
+- `rtk tsc --noEmit` → limpo.
+- Verificação via dump confirmou que `handoff` tem o marker `__PATCH_V2__` seguido da LISTA FECHADA.
+
+### Pendências pós-deploy
+- **Monitorar logs** `[validator:invalid]` e `[validator:double_miss]` primeiras horas — se double_miss for frequente, ajustar prompt do retry.
+- **Testar em conversa real** se a fluidez funciona (lead muda assunto → IA acompanha; lead volta → IA volta).
+- **Reconectar WhatsApp** na MegaAPI (item operacional do Rodrigo).
+- **Observar volume de 429 do Gemini** — se persistir, avaliar subir quota ou inverter ordem (OpenAI principal).
+- **Dashboard de hoje** — item antigo ainda pendente.
+
+### Leitura correta do estado atual após 18/04/2026
+- A parte de **qualidade de resposta** avançou bastante: catálogo sempre presente, guardrail determinístico, regras de fluidez genéricas, handoff restrito ao que o Rodrigo realmente quer ver.
+- A parte de **infra e identidade de contato** continua nos fixes do 16/04 (roteamento `remoteJid`, pausa por contato, contaminação de nome corrigida).
+- Ainda precisa de validação em produção real — código está mais correto mas não "100% provado" até rodar com conversas vivas.
+
+---
 
 ## Relacionado
 - [[Rodrigo]]
