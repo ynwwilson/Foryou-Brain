@@ -96,12 +96,12 @@ O problema: o cliente está comparando **custo com custo**. A conversa certa é 
 
 **Lógica do cálculo:**
 
-| Variável | Exemplo real |
-|---|---|
-| Leads/mês | 50 |
-| Ticket médio | R$500 |
+| Variável                 | Exemplo real       |
+| ------------------------ | ------------------ |
+| Leads/mês                | 50                 |
+| Ticket médio             | R$500              |
 | Taxa de fechamento atual | 25% = 12-13 vendas |
-| Receita via WhatsApp | ~R$6.250/mês |
+| Receita via WhatsApp     | ~R$6.250/mês       |
 
 Resposta imediata (segundos vs. horas) = 21x mais chance de qualificar o lead.
 Estimativa conservadora: recuperar 2-3 vendas/mês que hoje se perdem por demora.
