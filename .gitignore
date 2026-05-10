@@ -1,9 +1,22 @@
+# macOS
+.DS_Store
+
+# logs/cache/temp
+*.log
+*.tmp
+*.bak
+*.exe
+
+# Obsidian workspace/cache local
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
-.obsidian/plugins/obsidian-local-rest-api/data.json
-.obsidian/plugins/mcp-tools/bin/
-.obsidian/community-plugins.json
 .obsidian/graph.json
+
+# Obsidian Local REST API secrets
+.obsidian/plugins/obsidian-local-rest-api/data.json
+
+# MCP local binaries/cache
+.obsidian/plugins/mcp-tools/bin/
+
+# Smart Connections / smart env cache
 .smart-env/
-*.tmp
-*.exe
