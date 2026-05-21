@@ -13,7 +13,7 @@ Está se tornando referência em uso real de IA: usa Claude Code, Lovable, AntiG
 
 ### Negócios Ativos
 
-- **ForYouCode** — Dev house com Marco e Eduardo. Desenvolve apps, SaaS, softwares e automações para empresários high ticket. Sem pacote fixo — cobra por escopo, complexidade e urgência. Ticket mínimo ~R$15k. 90% dos projetos são SaaS/apps. Automações simples (ex: IA de atendimento) giram em torno de R$4.500.
+- **ForYouCode** — empresa com Marco e Eduardo que constrói sistemas proprietários sob medida para empresários high ticket. Não vende app/CRM/automação como pacote fechado; transforma a operação real do cliente em tecnologia própria: app, painel, IA, automações, integrações, dados, produtos digitais e sistemas internos. Cobra por escopo, complexidade, urgência, risco e valor gerado. Faixas saudáveis: automações com painel R$5k-R$20k, sistemas médios R$20k-R$40k, plataformas/ecossistemas R$30k-R$60k+.
 - **Rainha da Aprovação** — Plataforma educacional (vestibular/ENEM) construída inteiramente pelo José usando vibe coding. Painéis de Aluno, Professor e Diretora. Backend no Lovable Cloud.
 - **IA de Atendimento do Rodrigo** — Em construção, solo também.
 

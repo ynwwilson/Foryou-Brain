@@ -1,13 +1,27 @@
 ---
 tipo: knowledge
-tags: [foryoucode, comercial, plano, metas, funil, diagnostico, prospeccao]
-atualizado: 2026-04-10
+tags:
+  - foryoucode
+  - comercial
+  - plano
+  - metas
+  - funil
+  - diagnostico
+  - prospeccao
+atualizado: '2026-05-21'
 ---
 
 # Plano Comercial Completo — ForYou Code (v2)
 
-> Foco: vender apps e automações. Marketing não é produto ativo.
+> **Fonte oficial de capacidades:** [[Catalogo de entregas ForYou Code]]. Esta nota foca em **estratégia comercial, metas, funil e operação**. Para o que entregamos (módulos, agentes IA, integrações, features), consultar o catálogo.
+
+> **Cases consolidados:** [[Cases ForYou Code]] (formato proposta-ready).
+>
+> **Posicionamento canônico:** [[Posicionamento ForYou Code]].
+
+> Foco atualizado: vender sistemas proprietários sob medida para empresas que não cabem mais em ferramenta pronta. App, CRM, automação, IA e painel são formas possíveis da solução, não a oferta central. Marketing não é produto ativo.
 > Aprovado em: 2026-04-10
+> Atualizado em: 2026-05-21
 
 ---
 
@@ -38,13 +52,22 @@ atualizado: 2026-04-10
 - **Rodrigo:** marketing ativo + IA em implantação. IA foi upsell — não empurrar mais nada agora. Entregar bem, colher o case.
 - **Kevin:** acabou de casar — péssimo momento pra qualquer conversa comercial. Deixar quieto.
 - **Dayane:** app entregue e pago. Manutenção ativa — correções pontuais de bugs e inconsistências conforme aparecem. App pode ser usado como asset de venda. Indicação ainda não acionada — aguardar momento certo.
-- **Smartcell (Fellipe):** e-commerce em construção, 20% dos lucros. Para novos clientes desse nicho: projeto pago (R$20k-R$35k) + manutenção.
+- **Smartcell (Fellipe):** e-commerce premium **entregue em 25/04/2026** em smartcellsite.com.br. 20% dos lucros, manutenção e evolução incluídas. Fellipe autorizou uso como case público (nome/marca/número). Para novos clientes desse nicho: projeto pago (R$20k-R$35k) + manutenção.
 
 ---
 
 ## 2. Posicionamento e Diferencial
 
-**O que são:** construtores de ecossistemas digitais proprietários. Tecnologia feita para o negócio do cliente, com a marca dele, na infraestrutura dele. Sem dependência. Sem aluguel.
+**O que são:** construtores de sistemas proprietários sob medida para empresas que têm operação específica demais para depender de ferramenta pronta.
+
+A ForYouCode não vende app, CRM ou automação como pacote fechado. A ForYouCode constrói o sistema que a empresa teria se pudesse transformar a operação real dela em tecnologia.
+
+**Regra de capacidade:** se é legal, tecnicamente possível e melhora venda, controle, entrega, cobrança, atendimento, experiência ou decisão, a ForYouCode consegue desenhar, construir ou integrar.
+
+**O que isso significa na venda:** não abrir com lista de módulos. Abrir pela dor operacional e pelo controle que o cliente quer recuperar.
+
+**Frase guia:**
+> O cliente não compra uma funcionalidade. Ele compra a chance de parar de adaptar a empresa dele ao limite das ferramentas dos outros.
 
 ### O diferencial real
 IA de atendimento não é bot — é painel completo onde o dono:
@@ -190,7 +213,7 @@ Case: Dayane — escola com 200+ alunos.
 Imobiliária, distribuidora B2B, e-commerce com marca, construtora, prestador B2B com muitos clientes.
 Filtros: R$100k+/mês, complexidade que ferramentas genéricas não resolvem.
 Sinal: "estou perdendo controle", "tenho tudo em lugares diferentes"
-Case: Smartcell — Fellipe (em construção — usar como referência de nicho, não como case finalizado).
+Case: Smartcell — Fellipe (entregue 25/04/2026, em produção em smartcellsite.com.br — case público autorizado).
 
 ### IA de Atendimento + Painel
 30+ leads/mês no WhatsApp, perde venda por resposta lenta, quer controle além de automação.
@@ -294,13 +317,18 @@ Uso: anúncio de IA + orgânico José + demo em venda.
 ### Asset 2 — App da Dayane (ecossistema educacional)
 2–3 min. Interface do aluno, painel da escola, comunicação, materiais.
 Uso: orgânico nicho educação + prova social.
-**Status:** app entregue e pago. Manutenção ativa com correções pontuais. Pode ser gravado e usado como asset.
+**Status:** entregue em 20/03/2026, em produção em https://metodorainhadaaprovacao.vercel.app (migração futura pra .com.br). Manutenção e aprimoramentos contínuos. **Dayane autorizou nome/marca como case público** — restrição: não mencionar valor cobrado. Pronto para gravar.
 
 ### Asset 3 — App próprio ForYou Code
 2–3 min. Ecossistema interno.
 Uso: José posta "construímos nosso próprio sistema" + credibilidade meta.
 
-**Regra:** gravar os 3 em 1 dia. Edição básica — autenticidade vende mais que produção.
+### Asset 4 — Smartcell Premium Store (e-commerce + IA + admin completo)
+2–3 min. Hero com vídeo, navegação na loja, fluxo de PIX automático no checkout, painel admin completo, IA gerando descrição e imagem de produto por cor, módulo de seminovos com IMEI/bateria/checklist, split de sócios no financeiro.
+Uso: orgânico nicho varejo/e-commerce + prova social do que dá pra construir em modelo de participação.
+**Status:** entregue 25/04/2026, em produção em smartcellsite.com.br. Fellipe autorizou nome/marca/número público.
+
+**Regra:** gravar os 4 em 1 dia. Edição básica — autenticidade vende mais que produção.
 
 ---
 

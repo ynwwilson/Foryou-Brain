@@ -1,87 +1,140 @@
 ---
 tipo: knowledge
-tags: [foryoucode, icp, vendas, estrategia]
-atualizado: 2026-04-10
+tags:
+  - foryoucode
+  - icp
+  - vendas
+  - estrategia
+atualizado: '2026-05-21'
 ---
-
 # ICP da ForYou Code
 
-> Foco: apps e automações com diferenciais reais. Marketing não é produto ativo — atende se o cliente chegar, não prospecta.
+> Fonte oficial de posicionamento: [[Posicionamento ForYou Code]].
+> Fonte oficial de capacidades: [[Catalogo de entregas ForYou Code]].
 
 ---
 
-## Produto 1 — Ecossistema / App Completo (R$30k-R$60k)
+## Perfil em uma frase
 
-### Perfil A — Negócio recorrente com base de clientes ativa
-
-**Quem é:**
-Dono de negócio físico com base de clientes que volta todo mês. Quer digitalizar a experiência deles com a própria marca. Não sabe construir tecnologia, não quer sistema genérico.
-
-**Exemplos de nicho:**
-- Escolas físicas — preparatórios, idiomas, artes marciais, música, dança
-- Clínicas de saúde, estética e odontologia — porte médio, 3+ profissionais
-- Studios com assinatura — pilates, yoga, crossfit
-
-**Filtros obrigatórios:**
-- Faturamento mínimo: R$150k/mês
-- 150+ clientes/alunos/pacientes recorrentes
-- Já paga por 2-3 ferramentas que não integram e não têm a marca dele
-- Decisor é o dono
-
-**Sinal de compra:**
-> "Quero um app com meu nome", "Minha comunicação com aluno/paciente é uma bagunça", "Perco cliente por falta de engajamento digital"
-
-**Case:** Dayane Alemar (Rainha da Aprovação) — escola com 200+ alunos, ecossistema completo entregue.
+Dono de negócio brasileiro, com operação real e dinheiro circulando, que já sente que ferramenta pronta, WhatsApp, planilha e processo manual não acompanham mais o jeito que a empresa funciona.
 
 ---
 
-### Perfil B — Negócio de volume com complexidade que travou
+## O que torna um lead ideal
 
-**Quem é:**
-Negócio com alto volume de leads, pedidos ou clientes em paralelo que cresceu além do que WhatsApp + planilha conseguem gerenciar. Não precisa ser recorrente — precisa ter complexidade.
+O lead ideal tem pelo menos 3 destes sinais:
 
-**Exemplos de nicho:**
-- Imobiliárias com alto volume de leads
-- Distribuidoras B2B com catálogo e pedidos
-- E-commerce com marca própria
-- Construtoras e incorporadoras
-- Prestadores de serviço B2B com muitos clientes simultâneos
-
-**Filtros obrigatórios:**
-- Faturamento mínimo: R$100k/mês
-- Volume ou complexidade que ferramentas genéricas não resolvem
-- Precisa de 2+ módulos integrados (CRM + catálogo + pagamento + comunicação)
-- Quer a marca dele no digital, não plataforma de terceiro
-
-**Sinal de compra:**
-> "Estou perdendo controle do processo", "Tenho tudo em lugares diferentes", "Preciso de um sistema que centralize tudo"
-
-**Case:** Smartcell (Fellipe) — e-commerce de eletrônicos premium em construção.
+- faturamento acima de R$80k-R$100k/mês;
+- dono ou decisor direto na conversa;
+- operação diária com cliente, lead, pedido, entrega, cobrança ou equipe;
+- dados espalhados entre várias ferramentas;
+- WhatsApp como centro informal da operação;
+- planilhas críticas;
+- processos que dependem da memória de funcionário;
+- desejo de marca própria;
+- dor de controle, não apenas desejo estético;
+- capacidade de pagar por projeto sob medida.
 
 ---
 
-## Produto 2 — Automação com Interface (R$12k-R$18k + R$497/mês)
+## Dor principal
 
-**Quem é:**
-Empresa com operação comercial via WhatsApp em volume. O gargalo é resposta lenta ou vendedor que não registra nada. O dono quer automatizar sem perder controle — ver o funil, pausar a IA, assumir conversa com contexto completo.
+A dor não é "pagar caro em SaaS".
 
-**Filtros obrigatórios:**
-- 30+ conversas novas por mês no WhatsApp
-- Perde venda por demora na resposta
-- Tem marketing rodando (leads chegam mas somem)
-- Quer visibilidade e controle, não só automação
+A dor é operar fragmentado:
+- CRM não fala com WhatsApp;
+- WhatsApp não fala com financeiro;
+- financeiro não fala com BI;
+- vendedor não registra;
+- dono pergunta tudo manualmente;
+- ferramenta pronta não encaixa na regra real do negócio.
 
-**Nicho:** mais amplo — B2B ou B2C com ciclo de venda no WhatsApp. Construção civil, distribuidores, clínicas, imobiliárias, prestadores de serviço.
+A pergunta comercial certa é:
 
-**Diferencial que fecha a venda:**
-Não é chatbot. É painel completo: cada lead, contexto da conversa, objeções mapeadas, posição no funil, botão de assumir com histórico completo na tela. Nenhuma ferramenta do mercado entrega isso.
+> Quanto você está deixando de ganhar enquanto opera fragmentado?
 
-**Sinal de compra:**
-> "Meu vendedor não dá conta", "Perco lead por demora", "Não sei o que acontece depois que o lead chega"
+---
 
-**Case:** Rodrigo / Concretize Pré Moldados — fábrica, IA integrada com marketing, zero lead perdido por resposta lenta.
+## ICP 1 — Operação recorrente com base ativa
 
-**Regra:** todo cliente de marketing mensal é candidato automático. Argumento: "Geramos o lead e ficamos cegos depois. A IA fecha esse ciclo e o marketing fica 3x melhor com os dados."
+**Quem é:** escola, clínica, studio, curso, academia, assinatura, serviço recorrente ou negócio com clientes que voltam todo mês.
+
+**Filtros:**
+- R$100k-R$150k+/mês;
+- 100+ clientes/alunos/pacientes ativos;
+- comunicação e retenção importam;
+- dono quer visão real da base;
+- sistema próprio aumenta percepção de valor.
+
+**Sinais de compra:**
+- "Quero um app com meu nome";
+- "Minha comunicação é uma bagunça";
+- "Não sei quem está evoluindo, sumindo ou cancelando";
+- "Queria enxergar meus alunos/pacientes/clientes melhor".
+
+**Case:** Rainha da Aprovação / Dayane.
+
+---
+
+## ICP 2 — Operação de volume e complexidade
+
+**Quem é:** e-commerce, loja regional, distribuidora, imobiliária, construtora, prestador B2B, operação com muitos leads/pedidos/clientes simultâneos.
+
+**Filtros:**
+- R$100k+/mês;
+- alto volume de atendimento, pedido ou lead;
+- 2+ ferramentas sem integração;
+- processo manual criando perda;
+- precisa de painel, automação e dados.
+
+**Sinais de compra:**
+- "Estou perdendo controle";
+- "Tenho tudo em lugares diferentes";
+- "Meu time se perde";
+- "Preciso centralizar";
+- "Queria prever o que vai acontecer".
+
+**Cases:** Smartcell, Concretize, ForYou Leads.
+
+---
+
+## ICP 3 — Operação específica demais para SaaS pronto
+
+**Quem é:** empresa com regra própria, nicho incomum, fluxo interno específico, cálculo customizado, permissões próprias, cobrança própria, jornada própria ou experiência diferenciada.
+
+**O que vende:** sistema proprietário sob medida.
+
+**Exemplos:**
+- sistema financeiro/cobrança dentro da lei e com contratos;
+- portal do cliente com regras específicas;
+- motor de busca e geração de conteúdo;
+- análise de risco;
+- roteirização e logística;
+- tour 3D imobiliário;
+- plataforma educacional;
+- painel comercial com IA;
+- produto digital próprio.
+
+**Cases/provas:** Imerso, Infinity Content, Rainha da Aprovação, ForYou Leads.
+
+---
+
+## ICP 4 — Automação com interface e controle
+
+**Quem é:** empresa que quer automatizar, mas precisa ver e controlar o que está acontecendo.
+
+**Filtros:**
+- 30+ conversas/leads/processos por mês;
+- perda por demora ou desorganização;
+- precisa de painel, histórico, permissões e takeover humano;
+- não quer gambiarra invisível.
+
+**Sinais de compra:**
+- "Meu vendedor não dá conta";
+- "Não sei o que acontece depois que o lead chega";
+- "Quero automatizar, mas sem perder controle".
+
+**Case:** Concretize.
 
 ---
 
@@ -89,15 +142,18 @@ Não é chatbot. É painel completo: cada lead, contexto da conversa, objeções
 
 | Perfil | Por quê não |
 |---|---|
-| Empresa querendo agência de marketing | Não é o produto ativo |
-| Negócio abaixo de R$80k/mês | Sem capacidade de pagar |
-| Startup em estágio inicial | Sem dinheiro, muda escopo toda semana |
-| Quem quer "um site" | Produto errado |
-| Quem quer n8n ou ferramenta configurada | Filosofia oposta |
-| Quem compara com ManyChat/Typebot/Hotmart | Não entendeu o produto — não é seu cliente |
+| Quem quer só site barato | Não compra operação, compra aparência |
+| Negócio sem dinheiro circulando | Não sustenta ticket sob medida |
+| Startup sem produto validado | Escopo muda toda semana |
+| Quem quer só configurar ferramenta pronta | Filosofia oposta |
+| Quem compara com ManyChat/Typebot/Hotmart | Ainda está comparando módulo, não sistema |
+| Quem quer burlar lei, plataforma ou consumidor | Risco jurídico e reputacional |
+| Quem não é decisor | Venda trava antes de valor aparecer |
 
 ---
 
-## O perfil em uma frase
+## Frase de filtro
 
-> Dono de negócio brasileiro, faturamento acima de R$100k/mês, com volume ou complexidade que ferramentas genéricas não resolvem, que quer tecnologia construída para o negócio dele — não configurada, não alugada, não genérica.
+Se o lead só quer uma tela bonita, não é ForYouCode.
+
+Se o lead quer transformar operação em sistema próprio, é ForYouCode.
