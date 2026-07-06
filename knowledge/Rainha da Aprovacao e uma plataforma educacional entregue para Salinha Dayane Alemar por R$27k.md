@@ -1,13 +1,13 @@
 ---
 tipo: knowledge
-tags: [cliente, entregue, rainha-da-aprovacao, case, educacao]
-atualizado: 2026-04-10
+tags: [cliente, entregue, rainha-da-aprovacao, case, educacao, case-publico]
+atualizado: 2026-05-06
 ---
 
 # Rainha da Aprovação — Plataforma Educacional
 
 ## Status
-Entregue e pago. Manutenção ativa — correções pontuais de bugs e inconsistências conforme aparecem. Pode ser usado como case e asset de venda para o nicho de educação.
+**Entregue em 20 de março de 2026.** Em produção em https://metodorainhadaaprovacao.vercel.app (migração futura pra `metodorainhadaaprovacao.com.br`). Manutenção ativa — correções pontuais e aprimoramentos contínuos. Pode ser usado como case e asset de venda para o nicho de educação. **Dayane autorizou nome/marca como case público.**
 
 ## Cliente
 Dayane Alemar. Marca: Salinha / Rainha da Aprovação. Escola física com 200+ alunos.

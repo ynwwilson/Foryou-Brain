@@ -46,7 +46,7 @@ onde paramos, estavamos trocando de claude pra alguma outra …
 
 ---
 
-**08:49 Mestre:** GEMINI_API_KEY= AIzaSyDFYPCuVUXUcyq8wT03D2mqw0xvGO3Kc40  - Nome IA atendimento Nome do projeto projects/183012754718 Número do projeto 183012754718 - VERCEL- SIM FASE 1- AUTORIZO  - QUERO TUDO COM FULLAUTOAPROVE, ANTES DE IR, FALTA ALGUMA INFORMAÇÃO PRA TER TUDO PERFEITO?
+**08:49 Mestre:** GEMINI_API_KEY= [REDACTED-GOOGLE]  - Nome IA atendimento Nome do projeto projects/183012754718 Número do projeto 183012754718 - VERCEL- SIM FASE 1- AUTORIZO  - QUERO TUDO COM FULLAUTOAPROVE, ANTES DE IR, FALTA ALGUMA INFORMAÇÃO PRA TER TUDO PERFEITO?
 
 **Codex:** Vou implementar a fase 1 completa no código e deixar o deploy/Vercel preparado. Antes de editar, vou checar os arquivos de configuração e o estado atual do projeto para encaixar Gemini principal + OpenAI fallback sem quebrar o fluxo existente.
 

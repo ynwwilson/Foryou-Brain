@@ -1,7 +1,7 @@
 ---
 tipo: atlas
 tags: [conteudo, foryoucode, funil, personas]
-atualizado: 2026-03-25
+atualizado: 2026-05-23
 ---
 
 # Mapa do Sistema de Conteúdo
@@ -14,7 +14,7 @@ atualizado: 2026-03-25
 
 | Sócio | Handle | Persona | Técnica principal |
 |---|---|---|---|
-| Mestre | @wilsonads.ia | CEO autoritário, estratégico | Storytelling 1ª pessoa, causa longa |
+| Mestre | @ynwwilson | CEO autoritário, estratégico | Storytelling 1ª pessoa, causa longa |
 | Marco | @yngomesmarco | Direto, superação | Espelho indireto |
 | Eduardo | @eduardo | Crítico financeiro, pragmático | Gancho provocativo + resíduo |
 
@@ -58,7 +58,14 @@ Regra: **definir o funil antes de escrever qualquer roteiro.**
 
 ---
 
+## Produção automática — Infinity Content
+
+O pilar de **news / skill / lançamento** do canal do José é alimentado por uma máquina autônoma — a [[Infinity Content]]. Ela vigia ~18 fontes de IA 4x/dia, filtra pela barra "vale um Reels?", e entrega cards no Telegram. José clica nos que quer e o dossiê chega no canal em ~30s (via webhook). Limite atual: até 10 lançamentos/notícias/dia + até 4 skills/plugins/dia (máx 14 cards/dia). Os outros pilares (humor, case, bastidor, tech vivido) seguem produção manual via [[Conteúdo José]].
+
+---
+
 ## Links
+- [[Infinity Content]]
 - [[knowledge/Cada socio da ForYou Code tem persona e estrutura de roteiro propria e intransferivel|Personas e estruturas de roteiro]]
 - [[knowledge/Todo conteudo da ForYou Code e classificado em TOF MOF ou BOF antes de ser produzido|Framework TOF/MOF/BOF]]
 - [[knowledge/Processo de criacao de conteudo na ForYou Code|Processo de criação de conteúdo]]

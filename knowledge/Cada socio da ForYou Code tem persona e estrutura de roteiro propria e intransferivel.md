@@ -4,7 +4,7 @@ tags: [foryoucode, conteudo, personas, roteiro]
 atualizado: 2026-04-30
 ---
 
-## Jose / Mestre (wilsonads.ia)
+## Jose / Mestre (@ynwwilson)
 Persona: CEO estrategico, mas no dia a dia é de boa, engracado, meio ironico.
 Tem o lado serio/pesado/autoritario quando o assunto pede (negocios, gestao, lideranca, poder, marketing, manipulacao), mas o tom dominante hoje é informal, intimo, lofi.
 Usa historias reais com raciocinio pragmatico de causa e consequencia longa, sem perder o humor.

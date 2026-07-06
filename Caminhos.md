@@ -10,7 +10,8 @@ tags: [caminhos, projetos, referência]
 | ---------------------- | ------------------------------------------------ |
 | concretize-ia-webhook  | `C:/Users/ynwwi/Projects/concretize-ia-webhook`  |
 | concretize-insight-hub | `C:/Users/ynwwi/Projects/concretize-insight-hub` |
-| totus-ai-concierge     | `C:/Users/ynwwi/Projects/totus-ai-concierge`     |
+| totus-cenografia-ia    | `C:/Users/ynwwi/Projects/totus-cenografia-ia`    |
+| totus-ai-concierge     | `C:/Users/ynwwi/Projects/totus-ai-concierge` (legado; nao usar como fonte atual) |
 | whatsapp-context       | `C:/Users/ynwwi/Projects/whatsapp-context`       |
 | jarvis-archive         | `C:/Users/ynwwi/Projects/jarvis-archive`         |
 | stark-scripts          | `C:/Users/ynwwi/Projects/stark-scripts`          |
@@ -38,6 +39,7 @@ cd C:/Users/ynwwi/Projects/<projeto>
 # Claude
 cd C:/Users/ynwwi/Projects/concretize-ia-webhook && claude
 cd C:/Users/ynwwi/Projects/concretize-insight-hub && claude
+cd C:/Users/ynwwi/Projects/totus-cenografia-ia && claude
 cd C:/Users/ynwwi/Projects/totus-ai-concierge && claude
 cd C:/Users/ynwwi/Projects/whatsapp-context && claude
 cd C:/Users/ynwwi/Projects/jarvis-archive && claude
@@ -46,12 +48,14 @@ cd C:/Users/ynwwi/Projects/stark-scripts && claude
 # Claude Nova
 cd C:/Users/ynwwi/Projects/concretize-ia-webhook && claude-nova
 cd C:/Users/ynwwi/Projects/concretize-insight-hub && claude-nova
+cd C:/Users/ynwwi/Projects/totus-cenografia-ia && claude-nova
 cd C:/Users/ynwwi/Projects/totus-ai-concierge && claude-nova
 cd C:/Users/ynwwi/Projects/whatsapp-context && claude-nova
 
 # Codex
 cd C:/Users/ynwwi/Projects/concretize-ia-webhook && codex
 cd C:/Users/ynwwi/Projects/concretize-insight-hub && codex
+cd C:/Users/ynwwi/Projects/totus-cenografia-ia && codex
 cd C:/Users/ynwwi/Projects/totus-ai-concierge && codex
 cd C:/Users/ynwwi/Projects/whatsapp-context && codex
 ```

@@ -4,6 +4,7 @@
 # logs/cache/temp
 *.log
 *.tmp
+*.tmp.*
 *.bak
 *.exe
 
@@ -20,3 +21,12 @@
 
 # Smart Connections / smart env cache
 .smart-env/
+
+# Node
+node_modules/
+
+# obsidian-git credenciais locais
+.obsidian/plugins/obsidian-git/.git_credentials_input.response
+
+# Cofre local de secrets — NUNCA versionar
+_Sistema/Cofre Local/

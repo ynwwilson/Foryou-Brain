@@ -8,9 +8,7 @@
 
 | Projeto | Status | Arquivo detalhado |
 |---------|--------|-------------------|
-| Rainha da Aprovação | Em produção | `memory/projects/rainha-da-aprovacao.md` |
-| IA de Atendimento do Rodrigo | Em construção | `memory/projects/foryoucode.md` |
-| Smartcell | Em construção (e-commerce) | — |
+| IA de Atendimento do Rodrigo / Concretize | Em produção | `memory/projects/foryoucode.md` |
 
 ---
 
@@ -22,8 +20,11 @@
 
 ## ⚫ Concluídos
 
-<!-- Projetos entregues -->
+| Projeto | Entrega | Modelo | URL |
+|---------|---------|--------|-----|
+| Rainha da Aprovação | 20/03/2026 | R$27k contrato (case público autorizado, não divulgar valor) | metodorainhadaaprovacao.vercel.app |
+| Smartcell Premium Store (Fellipe) | 25/04/2026 | 20% participação nos lucros (sem fee) | smartcellsite.com.br |
 
 ---
 
-*Última atualização: 2026-03-26*
+*Última atualização: 2026-05-06*

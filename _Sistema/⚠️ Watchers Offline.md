@@ -1,11 +1,11 @@
 ---
-date: 2026-04-19 01:33:46
+date: 2026-07-06 20:55:19
 tags: [alerta, sistema]
 ---
 
 # ⚠️ Watchers Offline
 
-**Detectado em:** 2026-04-19 01:33:46
+**Detectado em:** 2026-07-06 20:55:19
 
 Os seguintes watchers estão sem heartbeat há mais de 120s:
 

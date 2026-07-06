@@ -1,10 +1,12 @@
 ---
 tipo: knowledge
 tags: [foryoucode, operacional, onboarding, cliente]
-atualizado: 2026-03-25
+atualizado: 2026-05-06
 ---
 
 # Onboarding de cliente novo na ForYou Code
+
+> **Fonte oficial de capacidades:** [[Catalogo de entregas ForYou Code]]. Esta nota foca em **o que fazer logo após fechar venda**. Para o escopo de entrega, consultar o catálogo.
 
 ## O que fazer logo após o fechamento
 
