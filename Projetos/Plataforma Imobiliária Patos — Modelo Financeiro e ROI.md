@@ -1,8 +1,7 @@
 # Modelo Financeiro, Monetização e ROI — deep dive
 
 > Doc dedicado. Vinculado a `Plataforma Imobiliária Patos de Minas.md` (seção 11).
-> Aprofunda a seção 8 (Investimento) e 9 (Free) com unit economics, LTV/CAC, breakeven duplo, modelo mês a mês, sensibilidade e motor de crescimento.
-> Escrito 2026-07-01.
+> Escrito 2026-07-01. **REVISADO 2026-07-07 (v2):** preço Pro R$279, founding cortado, escada Free/Pro/Imobiliária, CTS v2 (driver = uso do agente IA, doc `— CTS & COGS (pré-lançamento).md`), modo bootstrap (~R$2k, sem raise). Supersede todos os números com R$199/R$149.
 
 ---
 
@@ -23,200 +22,174 @@ Consequência prática: **o paywall trava o LEAD, não o anúncio.** Anúncio é
 Resposta estrutural, não torcida — ancorada na economia dele:
 
 - Corretor em Patos fecha comissão ~**6% de um imóvel ~R$300k = ~R$18.000** por venda.
-- R$199/mês = **R$2.388/ano**. **Um único negócio a mais no ano paga a assinatura ~7,5×.**
-- Pitch que se escreve sozinho: *"Custa menos que 2% de uma comissão. Se te der 1 lead que fecha no ano, se pagou 7 vezes."*
+- Pro R$279/mês = **R$3.348/ano**. **Um único negócio a mais no ano paga a assinatura ~5,4×.**
+- Pitch que se escreve sozinho: *"Custa menos de 20% de UMA comissão no ano inteiro. Se te der 1 lead que fecha, se pagou 5 vezes."*
 
-O imobpatos dá **visibilidade** (anúncio parado). Nós damos **o lead com nome + uma secretária que trabalha por ele**. Visibilidade é commodity; lead atribuído + tempo não é. Por isso **não subprecificar** — preço baixo sinaliza valor baixo e mata o runway.
+O imobpatos dá **visibilidade** (anúncio parado). Nós damos **o lead com nome + uma secretária IA que trabalha por ele**. Visibilidade é commodity; lead atribuído + tempo não é. R$279 é coerente com o valor: âncora de mercado ZAP/VivaReal R$200-700 e CRM imob R$100-500 — **todos SEM IA**.
 
 ---
 
-## 2. Estrutura de preço (tiers)
+## 2. Estrutura de preço (DECIDIDA 2026-07-02)
 
 | Plano | Preço | Pra quem | O que destrava |
 |---|---|---|---|
-| **Free** (isca) | R$0 | todo corretor/imob | perfil + imóveis ilimitados no hub + **vê a contagem** de leads ("3 pessoas chamaram") + 1-2 leads revelados/mês (degustação) |
-| **Pro** | **R$199/mês** | corretor autônomo | leads ilimitados (nome+tel+qual imóvel) + secretária IA + CRM/status + destaque |
-| **Imobiliária** | **R$449-599/mês** | imob com equipe | tudo do Pro + múltiplos usuários + mais estoque + painel de equipe |
-| **Founding** | **R$149/mês travado 12m** | primeiros ~20 | = Pro, preço de fundador (prova social + puxa caixa cedo) |
+| **Free** (isca) | R$0 | todo corretor/imob | perfil + 3 imóveis (5 p/ imob) + 5 fotos + **5 leads/mês com botão WhatsApp** + lead 6+ borrado/travado (gancho) + trial IA no 1º uso (depois bloqueia 100%) |
+| **Pro** | **R$279/mês** ou **R$2.790/ano** (2 meses off) | corretor autônomo | leads ilimitados na hora + secretária IA completa + CRM + atribuição + tempo real + imóveis/fotos ilimitados |
+| **Imobiliária** (Fase 2) | **R$199/corretor/mês** | imob com equipe | tudo do Pro por assento + distribuição de leads + painel de equipe (mais barato/cabeça, soma mais no total) |
 
 **Regras de preço:**
-- **Anual à vista = 2 meses grátis** (10× o mês por 12 meses). Puxa caixa pra frente (runway) + derruba churn.
-- **Sem setup fee** no lançamento (mata adesão). Onboarding pago só pra imobiliária grande, fase 2.
-- Founding é **time-boxed** (só a 1ª leva). Não descontar pra sempre — treina o mercado a não pagar.
-- ARPU-alvo (fase founding) ~**R$180 blended**; sobe pra ~R$200+ conforme full-price substitui founding e imobiliárias entram.
+- **SEM founding** (cortado 2026-07-02). No lugar: **anual à vista = 2 meses grátis** — puxa caixa, derruba churn, é o "desconto" oficial.
+- **Sem setup fee** (mata adesão).
+- Comprador 100% grátis sempre · ranking nunca pago · boost (Fase 2) = slot rotulado, nunca reordena o filtro.
+- Descoberta de teto na 1ª leva: R$279 é hipótese com boa âncora — **kill-test de preço** (§9) valida. Subir/segurar é fácil; baratear é irreversível.
+- ARPU-alvo: ~R$279 puro no lançamento (só Pro); blended ~R$250-260 quando Imobiliária entrar (assentos a R$199 puxam pra baixo mas somam mais receita total).
 
 ---
 
 ## 3. Estilo de cobrança (mecânica de pagamento)
 
-- **Gateway: Asaas.** Melhor pro Brasil interior — **PIX recorrente + boleto + cartão + régua de cobrança (dunning) automática**, taxa baixa (~1% PIX / ~R$0,49-1,99 boleto). Stripe é pior aqui (cultura de PIX/boleto; Asaas já cobra e recobra sozinho).
-- **Recorrência** no cartão/PIX. Oferecer **anual à vista** (desconto) pra quem topar → caixa adiantado + anti-churn.
-- **Primeiros 5 founding**: pode ser **PIX manual** pra validar antes de fiar o gateway (economiza build) — MAS migrar pro Asaas cedo, porque cobrança manual gera **churn silencioso** (esqueceu de pagar = sumiu).
-- Contato do lead **passa pela plataforma** (form / wa.me mascarado / chat) — senão o corretor põe telefone na foto e fura o paywall.
+- **Gateway: Asaas** (confirmado). PIX recorrente + boleto + cartão + régua de cobrança (dunning) automática, taxa ~1% PIX.
+- **Primeiros ~5 pagantes: PIX manual** (valida antes de fiar gateway) → migrar pro Asaas cedo (cobrança manual = churn silencioso).
+- **Anual à vista** ofertado desde o dia 1 (R$2.790) → caixa adiantado + anti-churn.
+- Contato do lead **passa pela plataforma** (botão WhatsApp mediado, número cru escondido) + **OCR anti-contato** na foto/texto do free — sem isso o paywall é teatro.
 
 ---
 
 ## 4. Modelo Free — "converter muito sem perder dinheiro"
 
-O pulo do gato: **o Free custa ~R$0 pra nós** (anúncio = linha no banco + storage). Então:
-- **Generoso na visibilidade** (que não custa): perfil + imóveis ilimitados no hub. Quanto mais cheio o hub → mais comprador → mais lead → melhor SEO. O Free **é o que enche a vitrine**.
-- **Mesquinho no lead** (que é o valor): mostra a **contagem** ("alguém quer seu imóvel"), esconde o contato. 1-2 revelações/mês de degustação.
-
-**Gatilho de conversão = FOMO de lead real.** *"Alguém quer teu imóvel — assina pra falar com ele."* Converte quente porque **o dinheiro do próprio corretor está do outro lado do paywall.**
-
-Risco: corretor furar o paywall (telefone na foto). Mitigação: contato roteado pela plataforma + no Free o contato direto fica oculto. Não é à prova de bala no dia 1, mas secretária IA + CRM seguram ele dentro.
+- Free custa ~centavos pra nós (5 leads/mês = ~R$0,05-0,15 diretos cada; anúncio = linha no banco). **Generoso em ser-visto, mesquinho na grana.**
+- Cota: 3 imóveis (corretor) / 5 (imob) + 5 fotos. Aparece e ranqueia por match igual todo mundo.
+- **A gota:** 5 leads/mês com botão. Lead 6+ = **borrado/visível-mas-travado** — corretor sabe que existe, não vê nem age. FOMO de dinheiro real.
+- **Trial da IA:** dispara no 1º uso → 7 dias completos → bloqueia 100% → só Pro.
+- Reseta mensal. Free = folder profissional excelente, não ferramenta de negócio.
 
 ---
 
-## 5. Unit economics (os números que decidem vida/morte)
+## 5. Unit economics (v2 — R$279 + CTS real)
+
+Base CTS: doc `— CTS & COGS (pré-lançamento).md` — CTS Pro ~R$60/conta no começo (base pequena rateia fixo) → ~R$35 maduro; variável pura leve R$15 / médio R$28 / pesado R$64 (driver = interação com agente IA, não lead).
 
 | Métrica | Valor | Nota |
 |---|---|---|
-| ARPU blended (founding) | ~R$180 | sobe com full-price + imobiliária |
-| Margem bruta | **~88-90%** | SaaS; custo variável = gateway ~4% + tokens IA R$5-15/conta + infra ~R$0 |
-| Lucro bruto / conta Pro | **~R$160-170/mês** | contribuição por cliente |
-| Churn mensal (early) | ~6% | founding 12m trava o churn da 1ª leva |
-| **LTV** | **~R$2.750-3.300** | lucro bruto ÷ churn (6% → 2.750; 5% → 3.300) |
-| **CAC cash** | **~R$300-500** | mídia é demand-gen compartilhada; corretor fecha no relacionamento (Marco/Eduardo ≈ R$0 cash) |
-| **LTV/CAC** | **~5,5-9×** | saudável (bar do mercado = 3×) |
-| **Payback** | **~3 meses** | CAC ÷ lucro bruto |
+| ARPU (lançamento) | **R$279** | só Pro no ar |
+| Contribuição/conta (variável médio + gateway) | **~R$248/mês** | 279 − 28 (CTS var) − 3 (gateway ~1%) |
+| Contribuição pior caso (corretor pesado) | ~R$212/mês | 279 − 64 − 3 |
+| Margem bruta | **~78% começo → ~88% maduro** | CTS R$60→R$35 com escala |
+| Churn mensal (early) | ~6% | anual à vista trava parte da base |
+| **LTV** | **~R$3,6-5,0k** | contribuição ÷ churn (248/0,06 ≈ 4,1k; pesado/6% ≈ 3,5k; médio/5% ≈ 5,0k) |
+| **CAC cash (bootstrap)** | **~R$0-250** | fechamento no relacionamento (Marco/Eduardo) ≈ R$0; atribuindo os R$2k de influencer à 1ª leva de ~8-10 ≈ R$200-250 |
+| **LTV/CAC** | **>15× bootstrap · ~8× com mídia ligada** | mídia futura R$3k/6 net-novos → CAC ~R$500 → ainda 7-10× |
+| **Payback** | **~1 mês bootstrap · ~2 meses com mídia** | CAC ÷ contribuição |
 
-**Insight de CAC (importante):** a mídia (R$3k/mês) compra **demanda do comprador**, reutilizável em todos os corretores — **não é custo por corretor**. Corretor é fechado no olho por Marco/Eduardo (CAC cash ≈ 0, só tempo). Mesmo jogando toda a mídia como se fosse aquisição de corretor (6/mês → R$500), o LTV/CAC continua ótimo. Real é melhor.
-
----
-
-## 6. Os DOIS breakevens (onde quase todo mundo se engana)
-
-Separar é vital — são números diferentes:
-
-1. **Breakeven de sobrevivência** (cobre só o inescapável: infra+ferramentas ~R$250 + gateway + IA):
-   → **~3 corretores pagantes.** Trivial. Com os 5 founding do gate, **as luzes já ficam acesas.**
-
-2. **Breakeven de crescimento** (cobre o burn TOTAL, **incluindo R$3k de mídia**):
-   → **~16 pagantes @ R$199** · **~20 @ R$149 founding.** É o número que importa pra "crescer se pagando".
-
-**Mídia é um DIAL, não custo fixo.** Caixa apertado → corta mídia pra ~R$0 → sobrevivência em ~3 corretores, cresce mais devagar no orgânico. **Essa opcionalidade é a rede de segurança** — nunca cavar o buraco mais fundo se o MRR travar.
+**Salto vs modelo antigo (R$199/149):** contribuição sobe ~R$165→~R$248 (+50%), LTV ~R$3,3k→~R$4-5k, e o breakeven cai pela metade (§6). O R$279 paga o custo da IA com folga e ainda melhora tudo.
 
 ---
 
-## 7. Modelo mês a mês (rampa conservadora, alinhada à meta de breakeven 3-5 meses)
+## 6. Os DOIS breakevens (v2)
 
-**Premissas:** one-time M0 R$3.500 (pacote lançamento) · fixo R$250/mês · mídia R$3.000/mês (ligada) · IA R$10×contas · gateway 4%×MRR · net-novo **6 pagantes/mês** · ARPU sobe R$170→R$195.
+1. **Breakeven de sobrevivência** (fixo Cloudflare+Supabase ~R$250/mês + variáveis já cobertos pela contribuição):
+   → **2 contas Pro.** O gate de 5 pagantes = MRR R$1.395 e **~R$1.000/mês de lucro operacional** — as luzes ficam acesas com folga.
 
-| Mês | Pagantes | ARPU | MRR | Custo total | Resultado | Caixa acumulado |
-|---|---|---|---|---|---|---|
-| M0 | — | — | — | 3.500 | −3.500 | **−3.500** |
-| M1 | 6 | 170 | 1.020 | 3.351 | −2.331 | −5.831 |
-| M2 | 12 | 175 | 2.100 | 3.454 | −1.354 | −7.185 |
-| M3 | 18 | 180 | 3.240 | 3.560 | −320 | **−7.505** ← fundo do poço |
-| M4 | 24 | 185 | 4.440 | 3.668 | +772 | −6.733 |
-| M5 | 31 | 190 | 5.890 | 3.796 | +2.094 | −4.639 |
-| M6 | 38 | 195 | 7.410 | 3.926 | +3.484 | −1.155 |
-| M7 | ~45 | 197 | ~8.900 | ~4.050 | +~4.850 | **+~3.700 ✅** |
+2. **Breakeven de crescimento** (se/quando ligar mídia R$3k/mês):
+   → (250 + 3.000) ÷ 248 ≈ **~14 contas Pro** (era ~17-20 no modelo antigo).
 
-**Leitura:** breakeven mensal ~**M3-M4** · caixa acumulado positivo (recupera todo o investimento) ~**M7** · **buraco máximo ~R$7.500.**
+**Mídia é DIAL, não custo fixo — e no bootstrap começa OFF.** Regra de ligar (proposta): só quando MRR ≥ ~R$3,5k (≥13 contas) E churn da 1ª renovação OK — aí a mídia se paga do próprio MRR, sem cavar buraco.
+
+---
+
+## 7. Modelo mês a mês (v2 — bootstrap, mídia OFF)
+
+**Premissas:** aporte único M0 **R$2.000** (4 vídeos influencer, tudo incluso) · fixo R$250/mês · CTS variável R$28×contas · gateway ~1%×MRR · **net-novo 4 pagantes/mês** (relacionamento + influencer) · ARPU R$279 · churn embutido na rampa.
+
+| Mês | Pagantes | MRR | Custo total | Resultado | Caixa acumulado |
+|---|---|---|---|---|---|
+| M0 | — | — | 2.250 | −2.250 | **−2.250** ← fundo do poço |
+| M1 | 4 | 1.116 | 373 | +743 | −1.507 |
+| M2 | 8 | 2.232 | 496 | +1.736 | **+229 ✅** |
+| M3 | 12 | 3.348 | 619 | +2.729 | +2.958 |
+| M4 | 16 | 4.464 | 742 | +3.722 | +6.680 |
+| M5 | 20 | 5.580 | 865 | +4.715 | +11.395 |
+| M6 | 24 | 6.696 | 988 | +5.708 | **+17.103** |
+
+**Leitura:** breakeven mensal **M1** · caixa acumulado positivo (investimento recuperado) **M2** · buraco máximo = **o próprio aporte de R$2.250**. O modelo bootstrap quase não tem downside financeiro — o risco é 100% de adesão (o gate), não de caixa.
 
 ### Sensibilidade (a parte honesta)
-| Cenário | Net-novo/mês | Breakeven mensal | Buraco máx | Capital necessário |
+| Cenário | Net-novo/mês | Breakeven mensal | Caixa acum. positivo | Capital necessário |
 |---|---|---|---|---|
-| Pessimista | 4 | ~M5-6 | ~R$11-12k | **R$15-18k** |
-| Base | 6 | ~M3-4 | ~R$7,5k | R$12-15k |
-| Otimista | 8 | ~M3 | ~R$6k | R$10-12k |
-| **Lean (mídia OFF)** | orgânico | sobrevive em ~3 pagantes | ~R$3-4k | **R$6-8k** |
+| Pessimista | 2 | M1 (ainda positivo) | ~M4 | **R$2,5-3k** |
+| Base | 4 | M1 | M2 | R$2-2,5k |
+| Otimista | 6 | M1 | M2 | R$2k |
+| Gate falha | <5 em 90d | — | — | encerra, perda ≈ R$2,5k |
 
-**Capital recomendado: R$15-18k** (aguenta o pessimista + churn maior). Anual à vista encolhe o buraco (puxa caixa). Lean é o plano B se o aporte apertar.
+Com contribuição de R$248/conta, **qualquer cenário com ≥1 conta já cobre o fixo**. A variável que mata não é custo — é **não fechar corretor**. Por isso o gate de morte continua inegociável.
 
 ---
 
 ## 8. Fontes de receita — ranqueadas por fase
 
-- **P0 (MVP/lançamento):** assinatura **Pro** (corretor), freemium lead-unlock. **É o dinheiro.**
-- **P1 (pós-PMF):** tier **Imobiliária** (multi-seat, expande ARPU) · **anual** · **destaque/boost** ⚠️ *ver alerta abaixo*.
-- **P2 (escala):** **pay-per-lead** avulso (corretor esporádico) · **página de lançamento** pra construtora (incorporadora paga caro por campanha de lançamento) · **relatório de mercado** premium pro profissional · **indicação** de financiamento/seguro (parcerias).
-- **EVITAR sempre:** comissão sobre a venda (jurídico/CRECI, corretor recusa) · cobrar do comprador.
+- **P0 (MVP/lançamento):** assinatura **Pro R$279** + anual R$2.790. **É o dinheiro.**
+- **P1 (pós-PMF):** tier **Imobiliária** (R$199/assento, multi-seat expande receita total) · **boost/destaque rotulado** ⚠️ *nunca reordena o filtro*.
+- **P2 (escala):** pay-per-lead avulso · página de lançamento pra construtora · relatório de mercado premium · indicação de financiamento/seguro (parcerias).
+- **EVITAR sempre:** comissão sobre a venda (CRECI/jurídico, corretor recusa) · cobrar do comprador · desconto permanente (treina o mercado a não pagar).
 
 ### ⚠️ Alerta do "boost" (protege a galinha dos ovos de ouro)
-A promessa **"o filtro manda"** é a confiança do comprador. Se boost pago distorce o resultado da busca, o comprador percebe e vai embora → morre tudo. Então monetizar posição **só de formas que não mentem pro comprador**: selo "destaque", desempate entre matches iguais, promoção no nível de perfil, carrossel "patrocinado" **claramente rotulado** — **nunca reordenar o resultado honesto do filtro.**
+A promessa **"o filtro manda"** é a confiança do comprador. Boost pago que distorce resultado da busca → comprador percebe → morre tudo. Monetizar posição só de formas que não mentem: selo "destaque", desempate entre matches iguais, carrossel "patrocinado" **claramente rotulado**. **Nunca reordenar o resultado honesto do filtro.**
 
 ---
 
 ## 9. Como NÃO perder dinheiro (disciplina)
 
-- **Não gastar mídia antes de:** (1) hub no ar, (2) hub semeado com founding, (3) captura de lead funcionando. Mídia em hub vazio = queima sem conversão.
 - **Gate de morte:** 5 pagantes (PIX na mão) em 90 dias, ou encerra. Kill test inegociável.
-- **Mídia atrelada ao breakeven:** MRR travou 2 meses → corta mídia, não cava o buraco.
-- **Founding só na 1ª leva**, time-boxed. Não vira desconto eterno.
-- **Anual à vista** pra puxar caixa = runway de graça.
-- **Infra lean:** free tier Vercel/Supabase → pago só quando a métrica forçar.
-- **Zero salário/pró-labore** antes do breakeven de crescimento. Sócios comem equity/futuro, não caixa agora.
-- **North-star = pagantes** (não signups, não tráfego). Secundário: **NRR** (net revenue retention) + **leads entregues/corretor** (a prova de valor).
+- **Kill-tests adicionais:** churn na 2ª renovação <10% · **teto de preço**: se a 1ª leva travar em R$279, testar R$249→R$199 ANTES de concluir que não há mercado (baratear controlado ≠ pânico).
+- **Mídia OFF até:** hub no ar + semeado + captura de lead OK + MRR ≥ ~R$3,5k. Influencer (R$2k) é o único gasto de marketing do lançamento.
+- **Instrumentar tokens/usuário desde o dia 1** + piloto 2-4 semanas com os 3-5 primeiros → crava CTS real (IA é o maior desconhecido). Alavancas obrigatórias: prompt caching, roteamento Haiku/Sonnet, trimming, fair-use.
+- **Infra lean:** Cloudflare (~R$250 tudo) — não Vercel (~R$390).
+- **Zero pró-labore** antes de MRR sustentado. Sócios comem equity/futuro.
+- **North-star = pagantes** (não signups, não tráfego). Secundário: NRR + leads entregues/corretor (a prova de valor).
 
 ---
 
 ## 10. Como CRESCER (não só sobreviver)
 
-**Flywheel local:** mídia → compradores → leads → corretor vê lead → corretor paga → corretor traz o estoque dele → hub mais rico → ranqueia orgânico/SEO → mais comprador → (gira). Mídia paga é o **primer**; **SEO local + boca a boca** é o motor que **compõe**. Em cidade de 150k, boca a boca de corretor é **brutal** nos dois sentidos — acerta os 10 primeiros e eles vendem por você; queima um e espalha.
+**Flywheel local:** influencer/orgânico → compradores → leads → corretor vê lead borrado → paga → traz estoque → hub mais rico → SEO local → mais comprador → (gira). Em cidade de 150k, boca a boca de corretor é **brutal** nos dois sentidos — acerta os 10 primeiros e eles vendem por você.
 
-**Land-and-expand:** corretor individual → imobiliária inteira (o tier Imobiliária é o expansor de ARPU). Secretária IA + CRM = stickiness → upsell (destaque, mais estoque, assentos) → **NRR >100%** mesmo com algum churn de logo.
+**Land-and-expand:** corretor individual → imobiliária inteira (tier por assento). Secretária IA + CRM = stickiness → NRR >100%.
 
 ### O prêmio grande: clone regional
-- **Teto honesto de Patos:** ~150-300 corretores ativos + ~25 imobiliárias. Pegando 30-40% pagantes → **60-120 contas** → MRR **R$12-24k** → ~R$150-290k/ano, margem ~85%. Negócio saudável pra 3 sócios — **não unicórnio**, mas máquina real.
-- **Como estourar o teto:** replicar o playbook **cidade a cidade** — Uberlândia, Uberaba, Araxá, Patrocínio (Alto Paranaíba/Triângulo). Ganhar **Patos como template**, depois clonar.
-- Por isso **secretária IA + SEO programático importam**: deixam cada nova cidade **barata de lançar**. Reframe o ROI: de "um site de cidade pequena" pra **"motor de hub local franqueável"** — aí o ROI fica grande de verdade.
+- **Teto honesto de Patos:** ~150-300 corretores ativos + ~25 imobiliárias. 30-40% pagantes → **60-120 contas** → com blended ~R$250-260 → **MRR R$15-31k → ~R$190-375k/ano**, margem ~85%+.
+- **Estourar o teto:** replicar cidade a cidade — Uberlândia, Uberaba, Araxá, Patrocínio. Patos = template; secretária IA + SEO programático deixam cada cidade nova **barata de lançar**. Reframe: não é "site de cidade pequena", é **motor de hub local franqueável**.
 
 ---
 
-## 11. Prazos / marcos financeiros
+## 11. Prazos / marcos financeiros (v2)
 
 | Quando | Marco |
 |---|---|
-| Jul/2026 (agora) | fechar modelo, buildar MVP (2-3 sem), fiar Asaas, semear founding |
-| M1 (~Ago, lança) | 5-6 founding pagantes → sobrevivência OK, **gate passado** |
-| M3-4 | **breakeven de crescimento** (~16-20 pagantes) |
-| M7 | **caixa acumulado positivo** (investimento recuperado) |
-| M12 | ~50-70 pagantes se a rampa segurar → MRR ~R$10-13k → **primeiro pró-labore/lucro distribuível** |
+| Jul/2026 (agora) | cravar nome/domínio, buildar MVP (2-3 sem), gravar 4 vídeos influencer |
+| M1 (~Ago, lança) | 5+ pagantes → **gate passado**, MRR ~R$1,4k, lucro op. ~R$1k/mês |
+| M2-3 | **caixa acumulado positivo** (aporte de R$2k recuperado) |
+| M4-6 | 16-24 contas → MRR R$4,5-6,7k → decidir ligar mídia (dial) |
+| M12 | 40-60 contas → MRR R$11-17k → **primeiro pró-labore/lucro distribuível** |
 
 ---
 
-## 12. Decisões financeiras pendentes (Mestre)
+## 12. Decisões financeiras — status
 
-1. **Preço final:** Pro R$199 (recomendado) · founding R$149 travado 12m — confirma?
-2. **Tier Imobiliária** entra já no lançamento ou fase 2? (recomendo: já, mesmo que 1-2 imobs).
-3. **Gateway:** Asaas (recomendado) — confirma? PIX manual só nos 5 primeiros?
-4. **Anual à vista com 2 meses grátis** — liga desde o dia 1? (recomendo sim, puxa caixa).
-5. **Capital aportado:** confirmar R$15-18k (ou rodar Lean R$6-8k com mídia OFF).
-6. **Boost pago:** só selo/desempate/rotulado (nunca reordenar o filtro) — de acordo?
+**Fechadas (2026-07-02):**
+1. ✅ Preço: **Pro R$279/mês · R$2.790/ano** (2 meses off) · Imobiliária R$199/assento (Fase 2).
+2. ✅ **Founding cortado** — anual é o desconto oficial.
+3. ✅ Gateway: **Asaas**; PIX manual só nos ~5 primeiros.
+4. ✅ Capital: **bootstrap ~R$2k** (4 vídeos), sem raise de R$15-18k.
+5. ✅ Boost: Fase 2, sempre rotulado, nunca reordena filtro.
+6. ✅ Imobiliária: Fase 2 (não entra no lançamento).
+
+**Abertas:**
+1. ⏳ Nome/domínio (Imora favorito; `imora.com.br` ocupado até 02/2027 — opções livres: `imora.imb.br`, `imoraimoveis.com.br`, `useimora.com.br`, `imorapatos.com.br`).
+2. ⏳ Critério formal pra ligar mídia (proposta §6: MRR ≥ R$3,5k + churn 1ª renovação OK).
+3. ⏳ Agenda dos 4 vídeos de influencer (amarrar com data de lançamento).
 
 ---
 
-## 13. ⏳ PROPOSTA — Reprecificação (pendente, decidir 2026-07-02)
+## 13. ✅ RESOLVIDO — Reprecificação (histórico)
 
-> Mestre levantou (2026-07-01): *"pra tudo que oferecemos, não tá barato demais?"* — instinto certo. O pacote cheio (com secretária IA) está **subprecificado no valor**. Proposta abaixo NÃO está travada; discutir amanhã antes de aplicar.
-
-**Âncora de mercado (concorrência cobra só por anúncio+lead, sem IA):** ZAP/VivaReal ~R$200-700/mês · OLX ~R$100-300 · CRM imob (Jetimob/Tecimob/Kenlo/Vista) ~R$100-500. Nós temos + **secretária IA por voz com poder total** (ninguém tem). Corretor fecha ~R$18k/comissão → não pisca pra R$400/mês.
-
-**Novo esquema proposto (ancora alto, entra barato, tiera a IA):**
-
-| Plano | Preço-lista | Contém |
-|---|---|---|
-| Free | R$0 | isca |
-| **Essencial** | **R$197** | hub + lead nominal + CRM + perfil + destaque (bate imobpatos, entra fácil) |
-| **Premium (com Secretária IA)** | **R$397** | tudo + secretária IA poder total + proativa + relatório falado ← tier do dinheiro |
-| **Imobiliária** | **R$697-997** | multi-corretor + painel de equipe |
-| **Founding** (primeiros ~15) | **R$247** travado 12m | = Premium, preço de fundador |
-
-**Lógica:**
-- Âncora alta (R$397) faz o valor parecer alto + captura corretor top.
-- Essencial R$197 = entrada sem atrito, bate o imobpatos grátis.
-- **Secretária IA vira o upsell** (land no Essencial → expand no Premium); NRR >100%. IA cara em token → cobrar mais protege margem.
-- Founding R$247 = desconto **explícito** ("preço de fundador, congela 12m") → adesão rápida + lealdade, sem baratear a marca.
-
-**Impacto no modelo (melhora tudo):**
-- ARPU blended sobe ~R$185 → **~R$280-320**.
-- Breakeven de crescimento cai **~17 → ~12 contas**.
-- Menos contas pra se pagar = menos capital em risco, breakeven mais cedo.
-- Risco novo: *"pagam R$397?"* → resolver com founding + **descoberta de teto** na 1ª leva.
-
-**Regra de ouro do preço:** praça nova com incumbente grátis = não se sabe o teto. **Ancora a lista alta, entra founding barato, descobre WTP com a 1ª leva.** Subir depois é fácil (grandfather nos founders); baratear depois é sinal de fraqueza (quase irreversível). **Errar pra cima na âncora.**
-
-**Decisão pendente:** aplicar este esquema (Essencial R$197 / Premium-IA R$397 / Founding R$247) e refazer breakeven/ARPU? — decidir 2026-07-02.
+A proposta Essencial R$197 / Premium-IA R$397 / Founding R$247 (levantada 2026-07-01) **morreu em 2026-07-02**. Decisão final do Mestre: escada simples **Free / Pro R$279 / Imobiliária por assento**, sem founding, IA dentro do Pro (não tierada). Racional preservado que continua valendo: âncora de mercado alta (ZAP R$200-700 sem IA), errar preço pra cima, descoberta de WTP na 1ª leva. Números deste doc já refletem a decisão.
