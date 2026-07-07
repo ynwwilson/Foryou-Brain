@@ -12,6 +12,19 @@ O script novo faz: commit do que mudou → pull (merge) → push → confere se 
 
 ---
 
+## ⚡ Jeito fácil — instalador de 1 clique (use este)
+
+Os instaladores fazem TODO o roteiro abaixo sozinhos (Passo 0 + agendador + teste). Na pasta do vault, abrir `_Sistema/Scripts/` e:
+
+- **Eduardo (Windows):** duplo clique em `instalar-sync.bat`.
+- **Marco (macOS):** duplo clique em `instalar-sync.command`.
+
+A janela mostra o progresso e termina com "TUDO PRONTO". Se pedir login do GitHub, logar (GitHub Desktop ou `gh auth login`) e rodar o instalador de novo — pode rodar quantas vezes quiser, é seguro repetir.
+
+O roteiro manual abaixo fica só como **fallback** se o instalador falhar.
+
+---
+
 ## PASSO 0 — todos (uma vez): destravar e subir o que tem
 
 No terminal, **na pasta do vault**:
